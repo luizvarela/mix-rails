@@ -1,0 +1,9 @@
+- content_for(:vouchers_content) do
+  - if @vouchers.length > 0
+    %ul.list.sequential
+      = render @vouchers
+  - else
+    %p.muted
+      Em breve estaremos com descontos exclusivos.
+
+= render template: 'templates/vouchers/index'

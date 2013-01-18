@@ -1,0 +1,15 @@
+pt-BR:
+  vouchers:
+    vouchers: 'Vouchers'
+    mailers:
+      send_confirmation_link:
+        subject: 'Imprima seu Voucher'
+    fields:
+      name: 'Nome'
+      date_from: 'De'
+      date_to: 'Até'
+      rules: 'Regras'
+      photo: 'Foto'
+      partner_photo: 'Foto do parceiro'
+  errors:
+    invalid_email: 'Email inválido'

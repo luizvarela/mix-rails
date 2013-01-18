@@ -31,5 +31,6 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'mix-rails-albums',            version
   gem.add_dependency 'mix-rails-videos',            version
   gem.add_dependency 'mix-rails-message-board',     version
+  gem.add_dependency 'mix-rails-vouchers',          version
 
 end

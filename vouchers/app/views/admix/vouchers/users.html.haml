@@ -1,0 +1,31 @@
+%h1 Usuários do voucher "#{@voucher.name}"
+
+- if @users.length > 0
+  %table.table.table-striped
+    %table.table
+      %thead
+        %tr
+          %th Nome
+          %th Email
+          %th Confirmou por email?
+          %th Ações
+      %tbody
+        - @users.each do |user|
+          %tr
+            %td= user.name.titleize
+            %td= user.email.downcase
+            %td= user.confirmed ? 'Sim' : 'Não'
+            %td
+              = link_to image_tag('admix/icons/delete.png'), admix_voucher_user_delete_url(id: @voucher.id, user_id: user.id), method: :delete, class: 'btn', title: 'Deletar este usuário'
+              - if user.confirmed
+                = link_to image_tag('admix/icons/printer.png'), vouchers_print_url(id: @voucher.id, user_id: user.id), class: 'btn', title: 'Imprimir voucher do usuário'
+              - else
+                %a.btn.disabled{title: 'Usuário não confirmado'}= image_tag('admix/icons/printer.png')
+
+- else
+  %p Nenhum cliente requisitou este voucher
+
+
+= link_to t('admix.crud.back'), collection_url, class: 'btn'
+
+

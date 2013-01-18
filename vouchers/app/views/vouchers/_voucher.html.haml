@@ -1,0 +1,12 @@
+%li
+  .row
+    .span5
+      %a{:href => voucher_path(voucher)}
+        = image_tag voucher.photo.url
+    .span10.offset1
+      %a.fz18.fb.white{:href => voucher_path(voucher)}
+        = voucher.name
+      - if voucher.rules
+        %p.fz14.fb.red Regras:
+        != voucher.rules
+

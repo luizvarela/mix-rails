@@ -1,0 +1,6 @@
+= f.input :name, label: t('vouchers.fields.name')
+= f.input :date_from, label: t('vouchers.fields.date_from'), as: 'datepicker'
+= f.input :date_to, label: t('vouchers.fields.date_to'), as: 'datepicker'
+= f.input :photo, label: t('vouchers.fields.photo'), as: :file
+= f.input :rules, label: t('vouchers.fields.rules'), as: :text, input_html: {class: 'niceditor'}
+= f.input :partner_photo, label: t('vouchers.fields.partner_photo'), as: :file

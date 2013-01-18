@@ -1,0 +1,9 @@
+%dl
+  %dt= t('vouchers.name')
+  %dd= resource.name
+  %dt= t('vouchers.rules')
+  %dd!= resource.rules
+  %dt= t('vouchers.photo')
+  %dd= image_tag resource.photo
+  %dt= t('vouchers.partner_photo')
+  %dd= image_tag resource.partner_photo

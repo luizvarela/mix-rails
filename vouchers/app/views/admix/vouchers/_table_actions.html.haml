@@ -1,0 +1,9 @@
+- if resource.users.length > 0
+  = link_to image_tag('admix/icons/printer.png'), admix_voucher_print_url(resource), class: 'btn', title: 'Imprimir usuários deste voucher'
+  = link_to image_tag('admix/icons/user_go.png'), admix_voucher_users_url(resource), class: 'btn', title: 'Listar usuários deste voucher'
+- else
+  %a.btn.disabled{title:'Nenhum usuário'}= image_tag('admix/icons/printer.png')
+  %a.btn.disabled{title:'Nenhum usuário'}= image_tag('admix/icons/user_go.png')
+= link_to image_tag('admix/icons/zoom.png'), resource_url(resource), class: 'btn', title:'Visualizar registro'
+= link_to image_tag('admix/icons/page_edit.png'), edit_resource_url(resource), class: 'btn', title:'Editar registro'
+= link_to image_tag('admix/icons/cancel.png'), resource_url(resource), method: :delete, data: { confirm: t('admix.crud.destroy_confirm') }, class: 'btn', title:'Deletar registro'

@@ -1,0 +1,30 @@
+.row
+  .span5
+    = image_tag voucher.photo.url
+  .span10.offset1
+    %p.fz18.fb.white
+      = voucher.name
+    %p.p.red.fz14.fb Regras de utilização:
+    != voucher.rules
+%hr
+  %div
+    %h3.fb.white.p.mini Imprima seu Voucher
+    %p.muted.p
+      Para ter acesso ao voucher é necessário preencher apenas essas informações abaixo e imprimir o cupom que será gerado na tela seguinte e apresentá-lo no estabelecimento para obter o benefício.
+
+    = simple_form_for @user, url: vouchers_send_confirmation_url do |f|
+      %form{:action => vouchers_send_confirmation_url}
+        .row.p.mini
+          .span
+            = f.label :name
+            = f.input_field :name, class: 'span8'
+            %p
+              = f.error :name
+          .span.offset1
+            = f.label :email
+            = f.input_field :email, class: 'span7', type: :email
+            %p
+              = f.error :email
+        .ta-r
+          %button.no-style{:type => "submit"}
+            = image_tag 'btn_seguir.png'

@@ -1,0 +1,56 @@
+!!!
+%html
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
+    %title Forro com Turista
+    %meta{:content => "width=device-width", :name => "viewport"}
+    %meta{:content => "", :name => "description"}
+    %meta{:content => "", :name => "keywords"}
+    = stylesheet_link_tag "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+    %link{:href => "favicon.png", :rel => "shortcut icon", :type => "image/png"}
+    %link{:href => "http://fonts.googleapis.com/css?family=Open+Sans:600italic,800italic,700,400", :rel => "stylesheet", :type => "text/css"}
+  %body.print
+    .row
+      .span16
+        .row.p
+          .span8
+            = image_tag 'logo_bw.png'
+          .span8.ta-r
+            .p.inverse
+              %h2.i Voucher de desconto
+              %p.i.gray.fz14.b forrocomturista.com.br
+        .line.big.p
+        %h2.i.p= @voucher.name
+        %p.fz14.p.b.i Regras de utilização:
+        %p.muted.p!= @voucher.rules
+
+        .pad-content.p.super
+          %table
+            %tbody
+              %tr
+                %td.gray.fz14
+                  Nome:
+                  %strong.gray= @user.name
+              %tr
+                %td.gray.fz14
+                  Email:
+                  %strong.gray= @user.email
+              %tr
+                %td.gray.fz14
+                  Data de Impressão:
+                  %strong.gray= @user.confirmation_date.strftime("%d/%m/%Y")
+              %tr
+                %td.gray.fz14
+                  Válido até
+                  %strong.gray= @voucher.date_to.strftime("%d/%m/%Y")
+        .line.big.p.super
+        %p.ta-c.i.fz14
+          Agradecemos seu interesse em nossos produtos/serviços,vamos continuar trabalhando
+          para que sua experiência em Natal/RN seja sempre inesquessível!
+          %br
+            %strong.fz18 www.forrocomturista.com.br
+    %script
+      window.print();

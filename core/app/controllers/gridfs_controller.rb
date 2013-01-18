@@ -4,7 +4,7 @@ class GridfsController < ActionController::Metal
   def serve
     gridfs_path = env["PATH_INFO"].gsub("/files/", "")
 
-    database_name        = Mongoid::Config.sessions[:default][:database]
+    database_name   = Mongoid::Config.sessions[:default][:database]
     host_and_port   = Mongoid::Config.sessions[:default][:hosts][0].split(':')
 
     host            = host_and_port[0]
@@ -20,9 +20,7 @@ class GridfsController < ActionController::Metal
     end
     
     db = con.db(database_name)
-
-    gridfs_file = Mongo::GridFileSystem.new(db).open(gridfs_path, 'r')
-
+    
     begin
       gridfs_file = Mongo::GridFileSystem.new(db).open(gridfs_path, 'r')
       self.response_body = gridfs_file.read

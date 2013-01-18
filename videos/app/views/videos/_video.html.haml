@@ -1,0 +1,12 @@
+- description = video.description.split.slice(0, 20).join(" ")
+- description = raw(sanitize(simple_format(description), :tags => %w(br p)))
+%li
+  .row
+    .span7
+      %a{:href => video_path(video)}
+        = image_tag video.thumb(:m)
+    .span8.offset1
+      %h3.fb.white=h truncate video.title, length: 27
+      %p= description
+      %a{:href => video_path(video)} Ver detalhes
+

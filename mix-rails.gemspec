@@ -29,5 +29,6 @@ Gem::Specification.new do |gem|
   # Content dependencies
   gem.add_dependency 'mix-rails-writer',    version
   gem.add_dependency 'mix-rails-albums',    version
+  gem.add_dependency 'mix-rails-videos',    version
 
 end

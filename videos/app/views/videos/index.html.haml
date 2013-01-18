@@ -1,0 +1,9 @@
+- content_for(:videos_content) do
+  - if @videos.length > 0
+    %ul.list.sequential
+      = render @videos
+  - else
+    %p.muted
+      Ainda não há videos disponíveis
+
+= render template: 'templates/videos/index'

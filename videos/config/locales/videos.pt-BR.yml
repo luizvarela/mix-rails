@@ -1,0 +1,8 @@
+pt-BR:
+  videos:
+    video: 'Vídeo'
+    videos: 'Vídeos'
+    fields:
+      title: 'Título'
+      published_at: 'Publicado em'
+      thumb: 'Imagem'

@@ -1,0 +1,20 @@
+.container
+  %h3.fb.white.p= @video.title
+  .video-wrapper.p
+    != @video.iframe height: 410, width: 670
+  .video-details
+    .row
+      .span5.white
+        = raw(sanitize(simple_format(@video.description), :tags => %w(br p)))
+      .span2.ta-r
+        %h4 visualizações
+        %p= number_to_human @video.views
+
+        %h4 likes
+        %p= number_to_human @video.likes
+
+        %h4 dislikes
+        %p= number_to_human @video.dislikes
+
+        %a{href:@video.url, target: :blank} Ver no Youtube
+

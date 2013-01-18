@@ -20,9 +20,9 @@ Create a new rails project.
 
 In your config/application.rb add these after require 'rails/all'.
 
-    ```ruby
-    require 'mix-rails/all'
-    ```
+```ruby
+require 'mix-rails/all'
+```
 
 Configure a mongoid instance with:
 

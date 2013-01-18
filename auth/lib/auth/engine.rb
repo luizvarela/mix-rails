@@ -1,8 +1,5 @@
 module Auth
   class Engine < ::Rails::Engine
-    puts "==================================="
-    puts "auth"
-    puts "==================================="
     def navigation
       if defined? Admix
         Admix::Navigation::NavBar.post_menu do

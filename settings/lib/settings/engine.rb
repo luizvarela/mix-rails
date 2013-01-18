@@ -1,8 +1,6 @@
 module Settings
   class Engine < ::Rails::Engine
-    puts "==================================="
-    puts "settings"
-    puts "==================================="
+    
     initializer "settings.default_settings" do |app|
 
       config = app.config

@@ -1,6 +1,6 @@
-# Mix::Rails
+# MixRails
 
-TODO: Write a gem description
+MixRails is a CMS based on Ruby on Rails and uses Mongoid as ORM(MongoDB).
 
 ## Installation
 
@@ -12,13 +12,25 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install mix-rails
-
 ## Usage
 
-TODO: Write usage instructions here
+Create a new rails project.
+
+    $ rails new myproject
+
+In your config/application.rb add these after require 'rails/all'.
+
+    ```ruby
+    require 'mix-rails/all'
+    ```
+
+Configure a mongoid instance with:
+
+    $ rails generate mongoid:config
+
+And then run the application
+
+    $ bundle exec rails server
 
 ## Contributing
 

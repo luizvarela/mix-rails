@@ -3,6 +3,7 @@ lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'mix-rails/version'
 
+MixRails::PROJECTS = %w(core auth admix settings writer albums videos message-board vouchers)
 
 version = MixRails::VERSION
 

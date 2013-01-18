@@ -1,5 +1,8 @@
 $:.push File.expand_path("../lib", __FILE__)
 
+# Encoding: UTF-8
+require File.expand_path('../../lib/mix-rails/version', __FILE__)
+
 # Maintain your gem's version:
 version = MixRails::VERSION
 
@@ -16,7 +19,9 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
 
   s.add_dependency "rails", "~> 3.2.9"
-  #s.add_dependency 'mix-rails', version
+  s.add_dependency 'mix-rails-core', version
+  s.add_dependency 'mix-rails-auth', version
+  s.add_dependency 'mix-rails-settings', version
 
   s.add_dependency "inherited_resources"
   s.add_dependency 'will_paginate_mongoid'

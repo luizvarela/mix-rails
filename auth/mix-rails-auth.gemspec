@@ -1,8 +1,8 @@
 $:.push File.expand_path("../lib", __FILE__)
 
-# Maintain your gem's version:
-require "auth/version"
+require File.expand_path('../../lib/mix-rails/version', __FILE__)
 
+# Maintain your gem's version:
 version = MixRails::VERSION
 
 # Describe your gem and declare its dependencies:

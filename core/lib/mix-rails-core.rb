@@ -31,7 +31,5 @@ require 'carrierwave/mongoid'
 require 'mini_magick'
 require 'haml_coffee_assets'
 
-require 'colorbox-rails'
-
 module MixRails
 end

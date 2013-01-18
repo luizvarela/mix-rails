@@ -21,7 +21,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'carrierwave-mongoid'
   s.add_dependency 'mini_magick'
   s.add_dependency 'haml_coffee_assets'
-  s.add_dependency 'colorbox-rails'
   
   # s.add_dependency "jquery-rails"
 end

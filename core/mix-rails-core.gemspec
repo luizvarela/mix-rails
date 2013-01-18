@@ -46,7 +46,6 @@ Gem::Specification.new do |s|
 
   s.add_dependency "jquery-rails"
   s.add_dependency "jquery-ui-rails"
-  s.add_dependency 'colorbox-rails'
 
   s.add_dependency "coffee-script"
   s.add_dependency "coffee-filter"

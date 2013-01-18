@@ -1,0 +1,4 @@
+%h1 Bem vindo
+- if @pending_messages.length > 0
+  %h4 Você possui #{@pending_messages.length} mensagens pendentes de aprovação
+  %a{href: admix_board_messages_path} Clique aqui para vê-las

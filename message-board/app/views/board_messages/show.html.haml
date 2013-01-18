@@ -1,0 +1,9 @@
+- content_for :metas do 
+  %meta{property: "og:title", content: "Mural de recados do Forró com Turista"}
+  %meta{property: "og:type", content: "website"}
+  %meta{property: "og:image", content: asset_path('forrocomturista_logo.jpg')}
+  %meta{property: "og:description", content: "#{@board_message.name}: #{@board_message.message}" }
+
+- content_for(:board_message_content) do
+  = render @board_message
+= render template: 'templates/board_messages/show'

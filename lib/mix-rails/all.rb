@@ -1,4 +1,4 @@
-%w(core admix auth settings writer albums videos).each do |extension|
+%w(core admix auth settings writer albums videos message-board).each do |extension|
   if extension == 'admix'
     require extension
   else

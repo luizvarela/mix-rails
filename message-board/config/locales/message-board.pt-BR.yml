@@ -1,0 +1,46 @@
+pt-BR:
+
+  resources:
+    board_messages: 'mural-de-recados'
+
+  will_paginate:
+    previous_label: "<< anterior"
+    next_label: "próximo >>"
+  
+  activerecord:
+    models:
+        board_message: 'Mensagem'
+        board_reply: 'Resposta'
+
+  simple_form:
+    labels:
+        board_message:
+            replies_count: 'Respostas (Qtde)'
+
+  message_board:
+    confirms:
+        approve: 'Tem certeza que deseja aprovar?'
+        disapprove: 'Tem certeza que deseja reprovar?'
+    message_board: 'Mural de Recados'
+    message: 'Mensagem'
+    messages: 'Mensagens'
+    flashes:
+        success_wait_moderation: 'Seu recado foi enviado. Por favor aguardar moderação.'
+    mailers:
+        message_replied:
+            subject: 'Sua mensagem foi respondida.'
+
+  boardmessages:
+    boardmessages: 'Mensagens'
+    boardmessage: 'Mensagem'
+    flashes:
+        approved: 'A mensagem foi aprovada.'
+        disapproved: 'A mensagem foi reprovada.'
+
+  boardreplies:
+    boardreplies: 'Respostas'    
+    boardreply: 'Resposta'
+    flashes:
+        approved: 'A mensagem foi aprovada.'
+        disapproved: 'A mensagem foi reprovada.'
+    

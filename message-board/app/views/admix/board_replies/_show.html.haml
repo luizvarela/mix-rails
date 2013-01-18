@@ -1,0 +1,11 @@
+%dl
+  %dt= input_label(:board_message, :name)
+  %dd= resource.name
+  %dt= input_label(:board_message, :email)
+  %dd= resource.email
+  %dt= input_label(:board_message, :message)
+  %dd= resource.message
+  %dt= input_label(:board_message, :date)
+  %dd= localize(resource.date)
+  %dt= input_label(:board_message, :approved)
+  %dd= resource.approved.text

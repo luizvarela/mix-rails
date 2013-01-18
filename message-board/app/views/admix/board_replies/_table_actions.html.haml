@@ -1,0 +1,8 @@
+- if resource.disapproved? or resource.approved.pending?
+  = link_to image_tag('admix/icons/shield_go.png'), approve_admix_board_message_path(resource), method: :put, data: { confirm: t('message_board.confirms.approve') }, class: 'btn', title:'Aprovar'
+- if resource.approved.approved? or resource.approved.pending?
+  = link_to image_tag('admix/icons/shield_delete.png'), disapprove_admix_board_message_path(resource), method: :put,data: { confirm: t('message_board.confirms.disapprove') }, class: 'btn', title:'Reprovar'
+
+= link_to image_tag('admix/zoom.png'), resource_url(resource), class: 'btn', title:'Visualizar registro'
+= link_to image_tag('admix/page_edit.png'), edit_resource_url(resource), class: 'btn', title:'Editar registro'
+= link_to image_tag('admix/cancel.png'), resource_url(resource), method: :delete, data: { confirm: t('admix.crud.destroy_confirm') }, class: 'btn', title:'Deletar registro'

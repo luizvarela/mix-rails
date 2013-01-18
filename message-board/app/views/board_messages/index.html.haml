@@ -1,0 +1,16 @@
+- content_for(:board_messages_content) do
+  = simple_form_for @board_message do |f|
+    = f.error_notification
+    .row.p
+      .span8
+        .p= f.input :name, input_html: {class: 'span8'}
+        %div= f.input :email, input_html: {class: 'span8'}
+      .span8= f.input :message, as: 'text', input_html: {class: 'span8'}
+    .ta-r
+      %button.no-style{:type => "submit"}
+        = image_tag 'btn_enviar.png'
+  %hr.great-margin
+    %ul.list.sequential
+      = render @board_messages
+  = will_paginate @board_messages
+= render template: 'templates/board_messages/index'

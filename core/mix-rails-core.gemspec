@@ -1,6 +1,6 @@
 $:.push File.expand_path("../lib", __FILE__)
 # Maintain your gem's version:
-require "mix-rails/version"
+require File.expand_path('../../lib/mix-rails/version', __FILE__)
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|

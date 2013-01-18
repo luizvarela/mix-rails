@@ -1,0 +1,3 @@
+= link_to image_tag('admix/zoom.png'), resource_url(resource), class: 'btn', title:'Visualizar'
+= link_to image_tag('admix/page_edit.png'), edit_resource_url(resource), class: 'btn', title:'Editar'
+= link_to image_tag('admix/cancel.png'), resource_url(resource), method: :delete, data: { confirm: t('admix.crud.destroy_confirm') }, class: 'btn', title:'Deletar'

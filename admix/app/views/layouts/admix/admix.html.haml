@@ -1,0 +1,81 @@
+!!!
+%html
+  %head
+    %meta{:charset => "utf-8"}
+      %meta{:content => "noindex, nofollow", :name => "robots"}
+        %title Admix
+        = stylesheet_link_tag    "admix/application", :media => "all"
+        = yield :stylesheets
+        %script
+          var HOST_NAME  = "#{request.protocol + request.host_with_port}";
+          var ROOT_PATH  = HOST_NAME + "#{root_path.chomp("/")}";
+        = javascript_include_tag "admix/application"
+        = yield :javascripts
+        = csrf_meta_tags
+  %body
+
+    / Top
+    .container-fluid
+      .navbar
+        .navbar-inner
+          = render_navigation context: :admix, expand_all: true, renderer: :bootstrap
+          -#
+            %form.navbar-form.pull-left
+              %input.span3{:type => "text"}
+                %button.btn{:type => "submit"}
+                  %i.icon-search
+          %ul.nav
+            %li
+              = link_to destroy_user_session_url, method: :delete do
+                %i{class: 'icon-off'}
+                = t('admix.logout')
+
+
+    .container-fluid
+      .row-fluid
+        .span2
+          .site-logo
+            - admix_logo = Setting.admix_logo
+            - if admix_logo and admix_logo.image?
+              = image_tag admix_logo.image.url
+            - else
+              = image_tag("admix/mix-framework-small.png")
+        .span10
+          = breadcrumbs.render class: 'breadcrumb'
+
+
+    #content.container-fluid
+      - if notice
+        %p.alert.alert-success= notice
+      - if alert
+        %p.alert.alert-warn= alert
+      = yield
+
+      -#
+        .row-fluid
+          .span2
+            %ul.nav.nav-pills.nav-stacked
+              %li.active
+                %a{href: ''} List
+              %li
+                %a{href: ''} New
+              %li
+                %a{href: ''} Remove
+          .span10
+            - if notice
+              %p.alert.alert-success= notice
+            - if alert
+              %p.alert.alert-warn= alert
+            = yield
+
+
+    .container-fluid
+      .footer
+        .row-fluid
+          .span6
+            %h6= app_title
+          .span6.ta-r
+            %span.gray.fs11 Desenvolvimento
+            %a{:href => "http://www.mixinternet.com.br/", :target => "_blank"}
+              %strong mix
+              %strong{:style => "color: #1b80c4;"} internet

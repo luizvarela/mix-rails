@@ -1,0 +1,17 @@
+en:
+  submit_sign_in: "Entrar"
+
+  
+  helpers:
+    label:
+      user:
+        email: 'E-mail'
+        password: 'Senha'
+        remember_me: 'Lembrar de mim da proxima vez.'
+
+  activerecord:
+      attributes:
+        user:
+          email: 'E-mail'
+          password: 'Password'
+          password_confirmation: 'Password confirmation'

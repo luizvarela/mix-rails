@@ -1,0 +1,3 @@
+class News < Post
+  
+end

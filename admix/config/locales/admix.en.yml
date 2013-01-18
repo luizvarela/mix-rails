@@ -1,0 +1,12 @@
+en:
+  admix:
+    dashboard: 'Dashboard'
+    crud:
+      show: 'Show'
+      new: 'New'
+      listing: 'Listing %{resources}'
+      edit: 'Edit'
+      destroy: 'Destroy'
+      destroy_confirm: 'Are you sure?'
+      breadcrumbs:
+        listing: 'Listing'

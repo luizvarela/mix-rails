@@ -1,0 +1,14 @@
+
+- array_of_resources = [:admix]
+- if defined? parent_type
+  - array_of_resources << parent_type
+- array_of_resources << resource
+
+= simple_form_for array_of_resources, :html => { :class => 'form-horizontal' }, wrapper: :bootstrap  do |f|
+  
+  = f.error_notification
+
+  = render partial: "form_fields", locals: {f: f}
+
+  .form-actions
+    = f.button :submit

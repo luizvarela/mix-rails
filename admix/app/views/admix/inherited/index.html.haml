@@ -1,0 +1,6 @@
+- pluralized_resource = resource_class.to_s.downcase.pluralize
+%h1= t('admix.crud.listing', resources: t("#{pluralized_resource}.#{pluralized_resource}"))
+
+= datagrid_table @report, @assets, html: {class: 'table table-striped'}
+= will_paginate @assets
+= link_to t('admix.crud.new.link'), new_resource_url, class: 'btn'

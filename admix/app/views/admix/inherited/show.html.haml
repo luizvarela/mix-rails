@@ -1,0 +1,6 @@
+- pluralized_resource = resource_class.to_s.downcase.pluralize
+%h1= t('admix.crud.show.title')
+= render partial: 'show', locals: {resource: resource}
+%br
+.well{style: 'clear:both;'}
+  = link_to t('admix.crud.list.title', resources: t("#{pluralized_resource}.#{pluralized_resource}")), collection_url, class: 'btn'

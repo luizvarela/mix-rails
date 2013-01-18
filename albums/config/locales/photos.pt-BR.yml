@@ -1,0 +1,11 @@
+pt-BR:
+  photos:
+    photos: 'Fotos'
+    photo: 'Foto'
+    legend: 'Legenda'
+    or: 'ou'
+    upload:
+      explanation: 'Clique no botão abaixo para adicionar as fotos.'
+    btn:
+      upload_pictures: 'Enviar arquivos de imagem'
+      upload_zip: 'Enviar arquivo ZIP'

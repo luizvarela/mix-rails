@@ -1,0 +1,20 @@
+pt-BR:
+  resources:
+    news: 'noticias'
+  will_paginate:
+    previous_label: "<< anterior"
+    next_label: "próximo >>"
+  posts:
+    published_yes: "Sim"
+    published_no: "Não"
+    posts: 'Postagens'
+    post: 'Postagem'
+    title: 'Nome'
+    date: 'Data'
+    text: 'Texto'
+    published: 'Publicado?'
+    source: 'Fonte'
+    image: 'Imagem'
+  news:
+    news: 'Notícias'
+    new: 'Notícia'

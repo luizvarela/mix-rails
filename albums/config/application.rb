@@ -1,0 +1,1 @@
+config.assets.paths << "#{ Rails.root }/app/assets/jcarousel/lib/"

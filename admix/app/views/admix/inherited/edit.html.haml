@@ -1,0 +1,5 @@
+- collection_name = resource_class.to_s.downcase.pluralize
+- resource_name = resource_class.to_s.downcase
+%h1= t('admix.crud.edit.title', resource: resource[@crumb_field])
+= render 'admix/inherited/form'
+= link_to t('admix.crud.back'), collection_url, class: 'btn'

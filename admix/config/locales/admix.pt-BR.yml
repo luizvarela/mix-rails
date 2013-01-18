@@ -1,0 +1,33 @@
+pt-BR:
+  admix:
+    dashboard: 'Painel'
+    logout: 'Sair'
+    crud:
+      actions: 'Ações'
+      back: 'Voltar'
+      show: 
+        title: 'Visualizando'
+        link: 'Ver'
+      new:
+        link: 'Novo'
+        title: 'Cadastrando'
+      list: 
+        title: 'Listar %{resources}'
+      listing: '%{resources}'
+      edit:
+        link: 'Editar'
+        title: 'Editando %{resource}'
+      destroy: 
+        link: 'Deletar'
+        title: 'Deletando'
+      destroy_confirm: 'Tem certeza que deseja deletar?'
+      breadcrumbs:
+        listing: 'Listando'
+  settings:
+    settings: 'Configurações'
+  general:
+    general: 'Geral'
+  content:
+    content: 'Conteúdo'
+  dashboard:
+    dashboard: 'Painel'

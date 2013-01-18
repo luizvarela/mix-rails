@@ -1,0 +1,33 @@
+source "http://rubygems.org"
+
+# Declare your gem's dependencies in albums.gemspec.
+# Bundler will treat runtime dependencies like base dependencies, and
+# development dependencies will be added by default to the :development group.
+gemspec
+
+group :assets do
+  gem 'haml_coffee_assets'
+end
+
+gem 'colorbox-rails'
+
+# jquery-rails is used by the dummy application
+gem "jquery-rails"
+gem "haml-rails"
+gem 'bson_ext'
+gem 'mongo'
+
+# gem 'carrierwave'
+# gem 'carrierwave-mongoid', require: 'carrierwave/mongoid'
+# gem 'mini_magick'
+# 
+gem "carrierwave-mongoid", :git => "git://github.com/jnicklas/carrierwave-mongoid.git", :branch => "master"
+gem 'mini_magick', :git => 'git://github.com/probablycorey/mini_magick.git'
+
+# Declare any dependencies that are still in development here instead of in
+# your gemspec. These might include edge Rails or gems from your path or
+# Git. Remember to move these dependencies to your gemspec before releasing
+# your gem to rubygems.org.
+
+# To use debugger
+# gem 'debugger'

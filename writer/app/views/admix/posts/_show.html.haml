@@ -1,0 +1,9 @@
+%dl
+  %dt= t('posts.title')
+  %dd= resource.title
+  %dt= t('posts.date')
+  %dd= resource.date.strftime("%d/%m/%Y")
+  %dt= t('posts.text')
+  %dd= raw resource.text
+  %dt= t('posts.source')
+  %dd= resource.source

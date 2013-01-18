@@ -1,0 +1,42 @@
+pt-BR:
+  enumerize:
+    published:
+      yes: 'Sim'
+      no: 'Não'
+    approved:
+      pending: "Pendente de aprovação"
+      approved: "Aprovado"
+      disapproved: "Reprovado"
+
+  pending_yes: 'Sim'
+  pending_no: 'Não'
+  pending: 'Pendente de aprovação'
+
+  simple_form:
+    labels:
+      defaults:
+        name: 'Nome'
+        email: 'E-mail'
+        message: 'Mensagem'
+        title: 'Título'
+        text: 'Texto'
+        activeted: 'Ativo?'
+        date: 'Data'
+        source: 'Fonte'
+        published: 'Publicado'
+        username: 'Usuário'
+        password: 'Senha'
+        new:
+          username: 'Escolha um nome de usuário'
+        image: 'Imagem'
+        approved: 'Aprovado?'
+    hints:
+      defaults:
+        username: 'Usuário para fazer login'
+        password: 'Escolha uma senha'
+    placeholders:
+      defaults:
+        username: 'Sua usuário'
+        password: 'Sua senha'
+  errors:
+    invalid_url: 'O formato da url está incorreto'

@@ -1,0 +1,10 @@
+pt-BR:
+  settings:
+    settings: 'Configurações'
+    setting:  'Configuração'
+    fields:
+      image: 'Imagem'
+      name: 'Nome'
+      key: 'Chave'
+      value: 'Valor'
+      activated: 'Ativo?'

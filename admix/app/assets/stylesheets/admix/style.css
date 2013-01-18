@@ -1,0 +1,79 @@
+@charset "utf-8";
+
+body {
+    font-size: 13px;
+}
+.footer {
+    border-top: 1px solid #dcdddc;
+    background-color: #f5f5f5;
+    padding: 30px;
+}
+#content {
+    min-height: 300px;
+    margin-bottom: 50px;
+}
+.ta-r {
+    text-align: right;
+}
+textarea {
+    height: 120px;
+}
+.input-error-msg, .input-mandatory-indicator {
+    color: #C33;
+}
+.input-error-msg {
+    margin-top: -9px;
+    display: block;
+    font-size: 12px;
+}
+.breadcrumb > li, .breadcrumb > li > a {
+    font-size: 15px;
+}
+.site-logo {
+    float:left;
+    width: 200px;
+    height:100px;
+    vertical-align:middle
+}
+th > .order {
+    display: inline-block;
+    width: 30px;
+}
+.nicEdit-main {
+    outline: 0
+}
+.niceditor-wrapper {
+    display: inline-block;
+}
+textarea.niceditor {
+    width: 500px;
+}
+#page-login {
+
+}
+#client-area {
+    text-align: center;
+    background-color: #227dd9;
+    position: relative;
+    color: #fff;
+    box-shadow: 0 1px 3px #777;
+}
+#client-area img {
+    padding: 10px 0 100px;
+    margin-top: 50px;
+}
+#client-area p {
+    font-size: 14px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -50px;
+    text-transform: uppercase;
+}
+#form-login {
+    width: 530px;
+    margin: 50px auto;
+}
+.ta-c {
+    text-align: center;
+}

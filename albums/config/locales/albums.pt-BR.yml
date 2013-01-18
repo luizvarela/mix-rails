@@ -1,0 +1,17 @@
+pt-BR:
+  resources:
+    albums: 'fotos'
+  will_paginate:
+    previous_label: "<< admix"
+    next_label: "próximo >>"
+  albums:
+    published_yes: 'Sim'
+    published_no: 'Não'
+    yes: "Sim"
+    no: "Não"
+    albums: 'Álbuns'
+    album: 'Álbum'
+    name: 'Nome'
+    date: 'Data'
+    published: 'Publicado?'
+    photos_quantity: "Quantidade de fotos"

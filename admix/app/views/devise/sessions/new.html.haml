@@ -1,0 +1,22 @@
+#form-login
+  = form_for(resource, :as => resource_name, :url => session_path(resource_name), html: {class:'form-horizontal'}) do |f|
+    .control-group
+      = f.label :email, class: 'control-label'
+      .controls
+        = f.email_field :email
+
+    .control-group
+      = f.label :password, class: 'control-label'
+      .controls
+        = f.password_field :password
+
+    .control-group
+      .controls
+        .checkbox
+          = f.check_box :remember_me
+          = f.label :remember_me
+
+        = f.submit "Acessar", class: 'btn'
+        - if devise_mapping.rememberable?
+          = link_to "Esqueci a senha", new_password_path(resource_name), class: 'pull'
+

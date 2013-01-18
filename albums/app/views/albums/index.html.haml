@@ -1,0 +1,4 @@
+- content_for(:albums_content) do
+  = render @albums
+  = will_paginate @albums
+= render template: 'templates/albums/index'

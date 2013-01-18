@@ -1,5 +1,3 @@
-module Mix
-  module Rails
-    VERSION = "0.0.1"
-  end
+module MixRails
+    VERSION = "0.5.0"
 end

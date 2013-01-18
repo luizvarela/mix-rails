@@ -1,0 +1,13 @@
+pt-BR:
+  will_paginate:
+    previous_label: "<< previous"
+    next_label: "next >>"
+  albums:
+    yes: "Yes"
+    no: "No"
+    albums: 'Albums'
+    album: 'Album'
+    name: 'Name'
+    date: 'Date'
+    published: 'Published?'
+    photos_quantity: "Photos count"

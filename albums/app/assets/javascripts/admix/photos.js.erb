@@ -1,0 +1,78 @@
+//= require hamlcoffee
+//= require ../photo_uploader
+//
+//= require_tree ../models
+//= require_tree ../collections
+//= require_tree ../views
+//= require_tree ../routers
+//= require_tree ../templates
+
+<% url = Rails.application.routes.url_helpers %>
+
+var oldSet = Backbone.Model.prototype.set;
+_.extend(Backbone.Model.prototype, {
+    set: function(attrs, options) {
+        if ('_id' in attrs) { this.id = attrs._id; }
+        oldSet.apply(this, [attrs, options]);
+        return this;
+    }
+});
+
+
+jQuery(function(){
+
+  var fileZip, fileZipView;
+  
+
+  var fileList = new FileList();
+  fileList.url = $("#files").data('url');
+  var fileListView;
+
+  jQuery("#uploader").change(function(el) {        
+      
+      var files = el.currentTarget.files;
+      
+      for(var i = 0; i < files.length; i++) {
+
+          var fileItem = new FileItem(
+          {
+              image: files[i], 
+              name: files[i].name
+          });
+          
+          fileItem.url = fileList.url;
+
+          fileList.add(fileItem);
+
+          
+          setTimeout(function(){
+               fileList.add(fileItem);
+          }, 1000);
+          
+      }
+
+      fileListView.render();
+  });
+
+  
+
+  fileListView = new FileListView({
+      initialize: function(){
+          this.render();
+          this.collection.on('change', this.render, this);
+      },
+      collection: fileList,
+      el: $("#files")
+  });
+
+  function updateFileList() {
+      fileList.fetch({
+          success: function() {
+              fileListView.render();
+          }
+      });    
+  }
+
+  updateFileList();
+
+});

@@ -1,0 +1,1 @@
+//= require ./jquery.jplayer/jquery.jplayer.min

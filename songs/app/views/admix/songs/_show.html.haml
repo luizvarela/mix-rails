@@ -1,9 +1,12 @@
 %dl
-  %dt= input_label(:songs, :name)
-  %dd= resource.name
+  %dt= input_label(:songs, :title)
+  %dd= resource.title
 
   %dt= input_label(:songs, :author)
   %dd= resource.author
+  
+  %dt= input_label(:songs, :mp3)
+  %dd= link_to resource.mp3.url, resource.mp3.url
 
   %dt= input_label(:songs, :status)
   %dd= resource.status.text

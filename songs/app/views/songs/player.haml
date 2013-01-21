@@ -1,0 +1,101 @@
+= javascript_include_tag 'underscore'
+= javascript_include_tag 'jquery'
+= javascript_include_tag 'jquery/jquery.livequery'
+= javascript_include_tag 'jplayer'
+= stylesheet_link_tag 'jplayer/jplayer.pink.flag'
+
+:coffeescript
+
+  window.pause = ->
+    $("#jp-pause").click()
+  window.play = ->
+    $("#jp-play").click()
+  window.next = ->
+    $("#jp-next").click()
+  window.previous = ->
+    $("#jp-previous").click()
+
+  window.play_pause = ->
+    if $(".jp-pause").is(':visible')
+      pause()
+    else
+      play()
+
+  window.bindPlayer = (_window) ->
+    if _window?
+      $("#jquery_jplayer_1").bind $.jPlayer.event.play, (event, par2) ->
+        console.log 'binding jquery_jplayer_1'
+        $("#musica-nome", _window.document).text event.jPlayer.status.media.title
+        $("#musica-play_pause", _window.document).removeClass("paused")
+
+      $("#jquery_jplayer_1").bind $.jPlayer.event.pause, (event, par2) ->
+        $("#musica-play_pause", _window.document).addClass("paused")
+
+  $.getJSON "#{songs_path(:json)}", (songs) =>
+    new jPlayerPlaylist(
+      jPlayer: "#jquery_jplayer_1"
+      cssSelectorAncestor: "#jp_container_1"
+    , _.map(songs, (s) -> 
+        s.mp3 = s.mp3.url
+        s),
+      swfPath: "#{asset_path('jquery.jplayer')}"
+      supplied: "mp3"
+      wmode: "window"
+      solution: "html, flash"
+      loop: true
+      ready: ->
+        $(this).jPlayer "play"
+    )
+
+    bindPlayer(parent.mainFrame)
+
+    #$("#jplayer_inspector").jPlayerInspector jPlayer: $("#jquery_jplayer_1")
+
+.container
+  .row
+    .span16.pull-right
+      #jquery_jplayer_1
+      #jp_container_1.jp-audio
+        .jp-type-playlist
+          .jp-gui.jp-interface
+            %ul.jp-controls
+              %li
+                %a#jp-previous.jp-previous{:href => "javascript:;", :tabindex => "1"} previous
+              %li
+                %a#jp-play.jp-play{:href => "javascript:;", :tabindex => "1"} play
+              %li
+                %a#jp-pause.jp-pause{:href => "javascript:;", :tabindex => "1"} pause
+              %li
+                %a#jp-next.jp-next{:href => "javascript:;", :tabindex => "1"} next
+              %li
+                %a.jp-stop{:href => "javascript:;", :tabindex => "1"} stop
+              %li
+                %a.jp-mute{:href => "javascript:;", :tabindex => "1", :title => "mute"} mute
+              %li
+                %a.jp-unmute{:href => "javascript:;", :tabindex => "1", :title => "unmute"} unmute
+              %li
+                %a.jp-volume-max{:href => "javascript:;", :tabindex => "1", :title => "max volume"} max volume
+            .jp-progress
+              .jp-seek-bar
+                .jp-play-bar
+            .jp-volume-bar
+              .jp-volume-bar-value
+            .jp-current-time
+            .jp-duration
+            %ul.jp-toggles
+              %li
+                %a.jp-shuffle{:href => "javascript:;", :tabindex => "1", :title => "shuffle"} shuffle
+              %li
+                %a.jp-shuffle-off{:href => "javascript:;", :tabindex => "1", :title => "shuffle off"} shuffle off
+              %li
+                %a.jp-repeat{:href => "javascript:;", :tabindex => "1", :title => "repeat"} repeat
+              %li
+                %a.jp-repeat-off{:href => "javascript:;", :tabindex => "1", :title => "repeat off"} repeat off
+          .jp-playlist
+            %ul
+              %li
+          .jp-no-solution
+            %span Update Required
+            To play the media you will need to either update your browser to a recent version or update your
+            = succeed "." do
+              %a{:href => "http://get.adobe.com/flashplayer/", :target => "_blank"} Flash plugin

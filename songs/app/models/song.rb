@@ -4,11 +4,12 @@ class Song
   include Mongoid::Timestamps
   extend Enumerize
 
-  field :name,          type: String
+  field :title,         type: String
   field :author,        type: String
   field :status,        type: String
   enumerize :status, in: [:published, :unpublished], default: :published, predicates: true
 
+  mount_uploader :mp3, Songs::SongUploader
 
   validates_presence_of :name
   validates_presence_of :author

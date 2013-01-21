@@ -8,7 +8,7 @@ class Admix::SongsDatagrid
     Song.desc(:date)
   end
 
-  column :name, header: input_label(:songs, :name)
+  column :title, header: input_label(:songs, :title)
   column :author, header: input_label(:songs, :author)
 
   column :status, header: input_label(:songs, :status) do |record|

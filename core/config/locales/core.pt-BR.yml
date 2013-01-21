@@ -1,5 +1,8 @@
 pt-BR:
   enumerize:
+    status:
+      published: 'Publicado'
+      unpublished: 'Não publicado'
     published:
       yes: 'Sim'
       no: 'Não'
@@ -15,6 +18,8 @@ pt-BR:
   simple_form:
     labels:
       defaults:
+        status: 'Status'
+        author: 'Autor'
         phone: 'Telefone'
         subject: 'Assunto'
         name: 'Nome'

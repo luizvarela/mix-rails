@@ -31,5 +31,8 @@ require 'carrierwave/mongoid'
 require 'mini_magick'
 require 'haml_coffee_assets'
 
+require 'mail_form'
+require 'simple_form'
+
 module MixRails
 end

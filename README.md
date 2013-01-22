@@ -1,5 +1,7 @@
 # MixRails
 
+[![Build Status](https://travis-ci.org/mixinternet/mix-rails.png)](https://travis-ci.org/mixinternet/mix-rails)
+
 MixRails is a CMS based on Ruby on Rails and uses Mongoid as ORM(MongoDB).
 
 ## Installation

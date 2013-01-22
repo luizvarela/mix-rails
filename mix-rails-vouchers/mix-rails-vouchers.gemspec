@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = version
   s.authors     = ["Rafael Garcia", "Sadjow Medeiros Leão"]
   s.email       = ["rafbgarcia@gmail.com", "sadjow@gmail.com"]
-  s.homepage    = "https://github/mixinternet/mix-rails"
+  s.homepage    = "https://github.com/mixinternet/mix-rails"
   s.summary     = "Vouchers module for mix-rails"
   s.description = "Vouchers module for mix-rails"
 

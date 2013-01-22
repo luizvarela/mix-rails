@@ -33,6 +33,7 @@
       jPlayer: "#jquery_jplayer_1"
       cssSelectorAncestor: "#jp_container_1"
     , _.map(songs, (s) -> 
+        s.title = s.title + " - " + s.author
         s.mp3 = s.mp3.url
         s),
       swfPath: "#{asset_path('jquery.jplayer')}"

@@ -18,10 +18,17 @@ Create a new rails project.
 
     $ rails new myproject -T --skip-active-record --skip-bundle --dummy-path=spec/dummy
 
-In your config/application.rb add these after require 'rails/all'.
+In your config/application.rb add these after rails's requires.
 
 ```ruby
-require 'mix-rails/all'
+require "action_controller/railtie"
+require "action_mailer/railtie"
+require "active_resource/railtie"
+require "sprockets/railtie"
+require "rails/test_unit/railtie"
+
+# After rails requiring mix-rails!!
+require "mix-rails/all"
 ```
 
 Configure a mongoid instance with:

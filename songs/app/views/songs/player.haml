@@ -24,12 +24,9 @@
   window.bindPlayer = (_window) ->
     if _window?
       $("#jquery_jplayer_1").bind $.jPlayer.event.play, (event, par2) ->
-        console.log 'binding jquery_jplayer_1'
         $("#musica-nome", _window.document).text event.jPlayer.status.media.title
-        $("#musica-play_pause", _window.document).removeClass("paused")
 
       $("#jquery_jplayer_1").bind $.jPlayer.event.pause, (event, par2) ->
-        $("#musica-play_pause", _window.document).addClass("paused")
 
   $.getJSON "#{songs_path(:json)}", (songs) =>
     new jPlayerPlaylist(

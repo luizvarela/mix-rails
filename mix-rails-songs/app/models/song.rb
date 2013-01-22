@@ -11,7 +11,7 @@ class Song
 
   mount_uploader :mp3, Songs::SongUploader
 
-  validates_presence_of :name
+  validates_presence_of :title
   validates_presence_of :author
 
   scope :published, where(status: :published)

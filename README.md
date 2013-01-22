@@ -16,7 +16,7 @@ And then execute:
 
 Create a new rails project.
 
-    $ rails new myproject
+    $ rails new myproject -T --skip-active-record --skip-bundle --dummy-path=spec/dummy
 
 In your config/application.rb add these after require 'rails/all'.
 

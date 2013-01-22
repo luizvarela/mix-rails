@@ -48,3 +48,6 @@ And then run the application
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+# Admix
+[![Admix](http://img233.imageshack.us/img233/6731/screenshotfrom201301221.png)]

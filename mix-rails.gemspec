@@ -1,11 +1,22 @@
 # -*- encoding: utf-8 -*-
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'mix-rails/version'
 
-MixRails::PROJECTS = %w(core auth admix settings writer albums videos message-board vouchers songs)
+require 'mix-rails'
 
-version = MixRails::VERSION
+MixRails::PROJECTS = []
+MixRails::PROJECTS << "mix-rails-core"
+MixRails::PROJECTS << "mix-rails-auth"
+MixRails::PROJECTS << "admix"
+MixRails::PROJECTS << "mix-rails-settings"
+MixRails::PROJECTS << "mix-rails-writer"
+MixRails::PROJECTS << "mix-rails-albums"
+MixRails::PROJECTS << "mix-rails-videos"
+MixRails::PROJECTS << "mix-rails-message-board"
+MixRails::PROJECTS << "mix-rails-vouchers"
+MixRails::PROJECTS << "mix-rails-songs"
+
+version = File.read(File.expand_path('../MIX_RAILS_VERSION', __FILE__)).strip
 
 Gem::Specification.new do |gem|
   gem.name          = "mix-rails"

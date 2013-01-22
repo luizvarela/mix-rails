@@ -1,10 +1,9 @@
 $:.push File.expand_path("../lib", __FILE__)
 
 # Encoding: UTF-8
-require File.expand_path('../../lib/mix-rails/version', __FILE__)
 
 # Maintain your gem's version:
-version = MixRails::VERSION
+version = File.read(File.expand_path('../../MIX_RAILS_VERSION', __FILE__)).strip
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|

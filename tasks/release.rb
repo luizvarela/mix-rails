@@ -1,18 +1,10 @@
+FRAMEWORKS = MixRails::PROJECTS
+
 root    = File.expand_path('../../', __FILE__)
 version = File.read("#{root}/MIX_RAILS_VERSION").strip
 tag     = "v#{version}"
 
 directory "pkg"
-
-FRAMEWORKS = []
-
-MixRails::PROJECTS.each do |project|
-  if project == 'admix'
-    FRAMEWORKS << project
-  else
-    FRAMEWORKS << "#{project}"
-  end
-end
 
 (FRAMEWORKS + ['mix-rails']).each do |framework|
   namespace framework do
@@ -96,12 +88,12 @@ namespace :changelog do
 end
 
 namespace :all do
-  task :build   => FRAMEWORKS.map { |f| "#{f}:build"   } + ['rails:build']
-  task :install => FRAMEWORKS.map { |f| "#{f}:install" } + ['rails:install']
-  task :push    => FRAMEWORKS.map { |f| "#{f}:push"    } + ['rails:push']
+  task :build   => FRAMEWORKS.map { |f| "#{f}:build"   } + ['mix-rails:build']
+  task :install => FRAMEWORKS.map { |f| "#{f}:install" } + ['mix-rails:install']
+  task :push    => FRAMEWORKS.map { |f| "#{f}:push"    } + ['mix-rails:push']
 
   task :ensure_clean_state do
-    unless `git status -s | grep -v MIX_RAILS_VERSION`.strip.empty?
+    unless `git status -s | grep -v RAILS_VERSION`.strip.empty?
       abort "[ABORTING] `git status` reports a dirty tree. Make sure all changes are committed"
     end
 

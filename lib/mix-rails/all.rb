@@ -1,7 +1,3 @@
-MixRails::PROJECTS.each do |extension|
-  if extension == 'admix'
-    require extension
-  else
-    require "mix-rails-#{extension}"
-  end
+MixRails::PROJECTS.each do |project|
+  require project
 end

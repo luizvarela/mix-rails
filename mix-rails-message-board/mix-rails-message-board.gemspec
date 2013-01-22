@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = version
   s.authors     = ["Sadjow Leão"]
   s.email       = ["sadjow@gmail.com"]
-  s.homepage    = "https://github.com:mixinternet/mix-rails"
+  s.homepage    = "https://github.com/mixinternet/mix-rails"
   s.summary     = "MessageBoard is a module from mix-rails"
   s.description = "MessageBoard is a module from mix-rails"
 

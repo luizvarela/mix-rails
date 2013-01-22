@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = version
   s.authors     = ["Sadjow Leão"]
   s.email       = ["sadjow@gmail.com"]
-  s.homepage    = "https://github.com:mixinternet/mix-writer"
+  s.homepage    = "https://github.com/mixinternet/mix-writer"
   s.summary     = "Mix Writer is a group of models, views, controllers for rails applications that added News, Blogs, Articles funcionality."
   s.description = "Mix Writer is a group of models, views, controllers for rails applications that added News, Blogs, Articles funcionality."
 

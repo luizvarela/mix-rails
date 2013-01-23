@@ -3,8 +3,11 @@ module Admix
 
     before_filter :authenticate_admix_user!, :add_initial_breadcrumbs, :globals
 
-    protected
+    def current_user
+      current_admix_user
+    end
 
+    protected
     def add_initial_breadcrumbs
       breadcrumbs.add t('admix.dashboard'), admix_root_path, :id => 'dashboard', :title => 'Go to the home page'
     end

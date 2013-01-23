@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     end
   end
 
-  namespace :admix do
+  scope Admix::namespace_path, as: :admix, module: :admix do
     resources :songs
   end
 

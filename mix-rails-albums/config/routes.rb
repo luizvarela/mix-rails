@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :albums
   end
     
-  namespace :admix do
+  scope Admix::namespace_path, as: :admix, module: :admix do
     resources :albums do
       resources :photos
     end

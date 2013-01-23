@@ -19,8 +19,12 @@ require 'mix-rails-auth'
 
 
 module Admix
-  mattr_accessor :menus_container
+
+  mattr_accessor :menus_container, :namespace_path
+
   self.menus_container = []
+
+  self.namespace_path = 'admix'
 
 
   module Navigation

@@ -9,7 +9,7 @@ class User
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :recoverable, :rememberable,
-         :trackable, :validatable#, :registerable
+         :trackable, :validatable, :registerable
 
   ## Database authenticatable
   field :email,              :type => String, :default => ""

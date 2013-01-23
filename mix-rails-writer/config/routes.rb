@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :posts
   end
 
-  namespace :admix do
+  scope Admix::namespace_path, as: :admix, module: :admix do
     resources :news
     resources :blogs do
       resources :posts

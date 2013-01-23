@@ -1,7 +1,7 @@
 module Admix
   class AdmixController < MixController
 
-    before_filter :authenticate_user!, :add_initial_breadcrumbs, :globals
+    before_filter :authenticate_admix_user!, :add_initial_breadcrumbs, :globals
 
     protected
 

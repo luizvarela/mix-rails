@@ -1,7 +1,7 @@
 module MixRailsAuth
   module VERSION #:nodoc:
     MAJOR = 0
-    MINOR = 11
+    MINOR = 12
     TINY  = 0
     PRE   = nil
 

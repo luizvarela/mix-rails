@@ -1,4 +1,6 @@
 var FileItem = Backbone.Model.extend({
+    name: 'photo',
+    url: 'photos',
     defaults: {
         progress:0
     },

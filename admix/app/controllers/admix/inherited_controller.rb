@@ -38,7 +38,7 @@ module Admix
       elsif resource.respond_to?(:email)
         :email
       else
-        raise "Implement crumb_field method in #{self}"
+        "Implement crumb_field method in #{self}"
       end
     end
 

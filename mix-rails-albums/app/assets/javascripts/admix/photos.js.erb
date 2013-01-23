@@ -9,17 +9,20 @@
 
 <% url = Rails.application.routes.url_helpers %>
 
-var oldSet = Backbone.Model.prototype.set;
-_.extend(Backbone.Model.prototype, {
-    set: function(attrs, options) {
-        if ('_id' in attrs) { this.id = attrs._id; }
-        oldSet.apply(this, [attrs, options]);
-        return this;
-    }
-});
+// var oldSet = Backbone.Model.prototype.set;
+// _.extend(Backbone.Model.prototype, {
+//     set: function(attrs, options) {
+//         if ('_id' in attrs) { this.id = attrs._id; }
+//         oldSet.apply(this, [attrs, options]);
+//         return this;
+//     }
+// });
 
+new PhotoRouter();
 
 jQuery(function(){
+
+
 
   var fileZip, fileZipView;
   

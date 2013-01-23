@@ -13,5 +13,8 @@
 //= require ./tipsy_init
 
 $ ->
+  
   $('.fancybox').livequery ->
     $(@).fancybox();
+
+  Backbone.history.start()

@@ -6,7 +6,11 @@ Rails.application.routes.draw do
     
   scope Admix::namespace_path, as: :admix, module: :admix do
     resources :albums do
-      resources :photos
+      resources :photos do
+        member do
+          get :edit_ajax
+        end
+      end
     end
   end
 

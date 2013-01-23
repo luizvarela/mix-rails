@@ -2,7 +2,8 @@ var FileView = Backbone.View.extend({
     tagName: 'li',
     className: 'span2',
     events: {
-        "click .delete": "delete"
+        "click .delete": "delete",
+        "click .photo-link": "photo_link",
     },
     initialize: function(){
         this.template = JST['photo_view']
@@ -30,5 +31,9 @@ var FileView = Backbone.View.extend({
           }
         });
         this.$el.fadeOut();
+    },
+    photo_link: function(e) {
+        e.preventDefault();
+        Backbone.history.navigate(":photo_id/ajax_edit".replace(':photo_id', this.model.get('id')), {trigger: true});
     }
 });

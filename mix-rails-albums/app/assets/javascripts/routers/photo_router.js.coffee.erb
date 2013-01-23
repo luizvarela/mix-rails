@@ -1,0 +1,7 @@
+class window.PhotoRouter extends Backbone.Router
+  routes:
+    ":photo_id/ajax_edit": "ajax_edit"
+
+  ajax_edit: (photo_id) ->
+    console.log "Editando foto #{photo_id}"
+    $("#photo-modal-#{photo_id}").modal()

@@ -14,4 +14,4 @@
     %a.btn.btn-primary.btn-upload{:onclick => "jQuery('#uploaderZip').click();"}= t('photos.btn.upload_zip')
 
 #fileZip
-%ul#files.thumbnails{'data-url' => admix_album_photos_path(defined?(parent) ? parent : resource, format: :json)}
+%ul#files.thumbnails{'data-url' => admix_album_photos_path(defined?(parent) ? parent : resource)}

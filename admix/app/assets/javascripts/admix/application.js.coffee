@@ -1,5 +1,7 @@
 //= require jquery
 //= require jquery_ujs
+//= require jquery/jquery.livequery
+//= require fancybox
 //= require jquery.ui.datepicker
 //= require ../../bootstrap/js/bootstrap.min
 //= require ./dates
@@ -9,3 +11,7 @@
 //= require ./nicedit_applier
 //= require ../../tipsy/src/javascripts/jquery.tipsy
 //= require ./tipsy_init
+
+$ ->
+  $('.fancybox').livequery ->
+    $(@).fancybox();

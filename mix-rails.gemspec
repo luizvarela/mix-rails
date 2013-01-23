@@ -46,4 +46,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'mix-rails-vouchers',          version
   gem.add_dependency 'mix-rails-songs',             version
 
+
+  gem.add_dependency 'fancybox-rails', "~> 0.1.4"
+
 end

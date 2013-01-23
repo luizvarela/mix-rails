@@ -11,5 +11,6 @@
  *= require_self
  *= require jquery.ui.all
  *= require ../../tipsy/src/stylesheets/tipsy
+ *= require fancybox
  *= require_tree .
  */

@@ -24,7 +24,8 @@
               %input.span3{:type => "text"}
                 %button.btn{:type => "submit"}
                   %i.icon-search
-          %ul.nav
+          %ul.nav.pull-right
+            %li= link_to current_user.email, admix_user_path(current_user)
             %li
               = link_to destroy_admix_user_session_url do
                 %i{class: 'icon-off'}

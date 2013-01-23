@@ -1,15 +1,6 @@
-- content_for :stylesheets do
-  = stylesheet_link_tag 'colorbox/colorbox'
 - content_for :javascripts do
   = javascript_include_tag 'admix/photos'
-  = javascript_include_tag 'jquery.livequery'
-  = javascript_include_tag 'colorbox/jquery.colorbox-min'
-  :coffeescript
-    $ ->
-      $('.colorbox').livequery ->
-        $(@).colorbox();
-
-
+  
 %h3 Upload de fotos
 #upload-buttons{:style => "padding: 20px;"}
   %div{:style => "display:none;"}

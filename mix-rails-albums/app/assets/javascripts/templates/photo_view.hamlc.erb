@@ -4,7 +4,7 @@
   %a.link-popover{"data-content" => "<i class=icon-edit></i> Edit"}
     .loading-file
       - if @image.url
-        %a.colorbox{href: ROOT_PATH + @image.medium.url}
+        %a.fancybox{href: ROOT_PATH + @image.medium.url, rel: 'photo-album'}
           %img{src: ROOT_PATH + @image.thumb.url}
       - else
         %img{src: "http://placehold.it/130x90&text=Carregando"}

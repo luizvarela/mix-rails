@@ -5,6 +5,8 @@ require 'mix-rails-core/engine'
 
 require 'enumerize'
 
+require 'fancybox-rails'
+
 require 'rails-i18n'
 
 require 'activevalidators'

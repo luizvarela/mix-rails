@@ -52,6 +52,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "coffee-script"
   s.add_dependency "coffee-filter"
+  s.add_dependency "rails-backbone"
   #s.add_dependency "sass-rails"
 
 end

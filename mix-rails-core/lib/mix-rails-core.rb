@@ -1,7 +1,7 @@
-require 'mix-rails-core/railtie' if defined?(Rails)
+require 'mix-rails/railtie' if defined?(Rails)
 
 
-require 'mix-rails-core/engine'
+require 'mix-rails/engine'
 
 require 'enumerize'
 
@@ -35,6 +35,8 @@ require 'haml_coffee_assets'
 
 require 'mail_form'
 require 'simple_form'
+
+require 'rails-backbone'
 
 module MixRailsCore
 end

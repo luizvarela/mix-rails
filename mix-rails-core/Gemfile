@@ -35,6 +35,8 @@ gem 'will_paginate_mongoid'
 gem 'coffee-script'
 #gem 'sass-rails'
 
+gem 'rails-backbone'
+
 group :test do
   gem 'cucumber-rails'
   gem 'capybara'

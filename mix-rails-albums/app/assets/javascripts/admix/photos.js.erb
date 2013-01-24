@@ -1,6 +1,4 @@
 //= require hamlcoffee
-//= require ../photo_uploader
-//
 //= require_tree ../models
 //= require_tree ../collections
 //= require_tree ../views
@@ -9,28 +7,14 @@
 
 <% url = Rails.application.routes.url_helpers %>
 
-// var oldSet = Backbone.Model.prototype.set;
-// _.extend(Backbone.Model.prototype, {
-//     set: function(attrs, options) {
-//         if ('_id' in attrs) { this.id = attrs._id; }
-//         oldSet.apply(this, [attrs, options]);
-//         return this;
-//     }
-// });
-
 new PhotoRouter();
 
-jQuery(function(){
+jQuery(function() {
 
-
-
-  var fileZip, fileZipView;
-  
-
+  var fileZip, fileZipView, fileListView;
   var fileList = new FileList();
   fileList.url = $("#files").data('url');
-  var fileListView;
-
+  
   jQuery("#uploader").change(function(el) {        
       
       var files = el.currentTarget.files;

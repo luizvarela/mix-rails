@@ -6,5 +6,5 @@ require "mini_magick"
 
 require "haml_coffee_assets"
 
-module Albums
+module MixRailsAlbums
 end

@@ -1,5 +1,5 @@
 - content_for :javascripts do
-  = javascript_include_tag 'admix/photos'
+  = javascript_include_tag 'photos/upload'
   
 %h3 Upload de fotos
 #upload-buttons{:style => "padding: 20px;"}
@@ -14,4 +14,4 @@
     %a.btn.btn-primary.btn-upload{:onclick => "jQuery('#uploaderZip').click();"}= t('photos.btn.upload_zip')
 
 #fileZip
-%ul#files.thumbnails{'data-url' => admix_album_photos_path(defined?(parent) ? parent : resource)}
+%ul#photos.thumbnails{'data-url' => admix_album_photos_path(defined?(parent) ? parent : resource)}

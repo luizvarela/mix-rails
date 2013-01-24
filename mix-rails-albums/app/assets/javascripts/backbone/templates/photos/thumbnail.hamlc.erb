@@ -1,0 +1,16 @@
+.thumbnail.file-item
+  .file-title
+    = @title
+  %a.link-popover{"data-content" => "<i class=icon-edit></i> Edit"}
+    .loading-file
+      - if @image.url
+        %a.photo-link{href: "#"}
+          %img{src: ROOT_PATH + @image.thumb.url}
+      - else
+        %img{src: "http://placehold.it/130x90&text=Carregando"}
+    -if (@progress != null && @progress < 100)
+      %div{class: (@progress < 100) ? 'progress progress-striped active' : 'progress'}
+        .bar{style: "width:#{@progress}%;"}
+  .caption
+    %a.file-action.delete{href: "#"} 
+      <%= image_tag "albums/delete.png" %>

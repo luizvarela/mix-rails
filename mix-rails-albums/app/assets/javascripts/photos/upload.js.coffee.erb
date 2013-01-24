@@ -1,0 +1,9 @@
+#= require ../backbone/application
+#= require_self
+
+<% url = Rails.application.routes.url_helpers %>
+
+$ ->
+  $.getJSON $("#photos").data('url'),(json) ->
+    new Application.Routers.PhotosRouter(photos: json)
+    Backbone.history.start()

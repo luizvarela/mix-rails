@@ -4,7 +4,6 @@
 #= require backbone
 #= require backbone_rails_sync
 #= require backbone_datalink
-#= require_tree .
 #= require jquery/jquery.livequery
 #= require fancybox
 #= require jquery.ui.datepicker

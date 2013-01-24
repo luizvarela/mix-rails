@@ -50,6 +50,9 @@ And then run the application
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
 
+# Assets
+You can use Backbone, CoffeeScript, HAML, 
+
 # Auth
 Mix-Rails uses [Devise](https://github.com/plataformatec/devise) for auth, you can see more docs at:
 

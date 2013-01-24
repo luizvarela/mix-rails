@@ -1,7 +1,7 @@
 module MixRailsVouchers
   module VERSION #:nodoc:
     MAJOR = 0
-    MINOR = 14
+    MINOR = 15
     TINY  = 0
     PRE   = nil
 

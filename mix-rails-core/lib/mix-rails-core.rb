@@ -1,7 +1,7 @@
-require 'mix-rails/railtie' if defined?(Rails)
+require 'mix-rails-core/railtie' if defined?(Rails)
 
 
-require 'mix-rails/engine'
+require 'mix-rails-core/engine'
 
 require 'enumerize'
 

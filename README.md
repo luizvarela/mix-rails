@@ -50,5 +50,27 @@ And then run the application
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
 
+# Auth
+Mix-Rails uses [Devise](https://github.com/plataformatec/devise) for auth, you can see more docs at:
+
+Create a default user.
+    $ bundle exec rake create_user[yourname@example.com,mypassword]
+
+If you are using admix enter /admix and you will see the login page.
+You can also login with page /users/sign_in
+
 # Admix
+
+Admix is a administrative area for any system.
+
+## URL
+
+You can change default path for admix setting  Admix::namespace_path
+```ruby
+Admix::namespace_path = "myadminpath"
+# You will access http://localhost:3000/myadminpath and see Admix running!!
+```
+
+TODO: Add some docs for admix
+
 [![Admix](http://img233.imageshack.us/img233/6731/screenshotfrom201301221.png)]

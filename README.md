@@ -54,6 +54,7 @@ And then run the application
 Mix-Rails uses [Devise](https://github.com/plataformatec/devise) for auth, you can see more docs at:
 
 Create a default user.
+
     $ bundle exec rake create_user[yourname@example.com,mypassword]
 
 If you are using admix enter /admix and you will see the login page.

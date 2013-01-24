@@ -12,5 +12,5 @@
       %div{class: (@progress < 100) ? 'progress progress-striped active' : 'progress'}
         .bar{style: "width:#{@progress}%;"}
   .caption
-    %a.file-action.delete{href: "#"} 
+    %a.file-action.destroy{href: "#"} 
       <%= image_tag "albums/delete.png" %>

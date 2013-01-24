@@ -13,7 +13,7 @@ class Application.Views.Photos.UploadIndexView extends Backbone.View
 
   addOne: (photo) =>
     view = new Application.Views.Photos.PhotoView({model : photo})
-    @$(".photos-container").append(view.render().el)
+    @$("#photos").append(view.render().el)
 
   render: =>
     @$el.html(@template(photos: @options.photos.toJSON() ))

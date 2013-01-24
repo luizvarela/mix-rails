@@ -1,17 +1,7 @@
 - content_for :javascripts do
   = javascript_include_tag 'photos/upload'
+  :coffeescript
+    window.RESOURCE_PATH = "#{admix_album_photos_path(defined?(parent) ? parent : resource)}"
   
 %h3 Upload de fotos
-#upload-buttons{:style => "padding: 20px;"}
-  %div{:style => "display:none;"}
-    %input#uploader{:multiple => "multiple", :name => "files", :style => "display:none;", :type => "file", :value => "Selecionar File(s)"}/
-    %input#uploaderZip{:name => "files", :style => "display:none;", :type => "file", :value => "Selecionar File(s)"}/
-  %p= t('photos.upload.explanation')
-  %div
-    %a.btn.btn-primary.btn-upload{:onclick => "jQuery('#uploader').click();"}= t('photos.btn.upload_pictures')
-  -#
-    = t('photos.or')
-    %a.btn.btn-primary.btn-upload{:onclick => "jQuery('#uploaderZip').click();"}= t('photos.btn.upload_zip')
-
-#fileZip
-%ul#photos.thumbnails{'data-url' => admix_album_photos_path(defined?(parent) ? parent : resource)}
+#upload-container

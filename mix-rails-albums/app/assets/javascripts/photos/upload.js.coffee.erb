@@ -4,21 +4,21 @@
 <% url = Rails.application.routes.url_helpers %>
 $ ->
   $.getJSON RESOURCE_PATH,(json) ->
-    new Application.Routers.PhotosRouter(collectionUrl: RESOURCE_PATH, photos: json)
+    window.photos_router = new Application.Routers.PhotosRouter(collectionUrl: RESOURCE_PATH, photos: json)
     Backbone.history.start()
 
-  $("#uploader").change (el) ->
-    files = el.currentTarget.files
-    i = 0
-    while i < files.length
-      photo = new Application.Models.Photo(
-        image: files[i]
-        name: files[i].name
-      )
-      photo.url = fileList.url
-      fileList.add photo
-      setTimeout (->
-        fileList.add photo
-      ), 1000
-      i++
-    fileListView.render()
+  $("#uploader").livequery ->
+    $(@).change (el) ->
+      #photos_router.addFromFiles(el.currentTarget.files)
+      files = el.currentTarget.files
+      i = 0
+      while i < files.length
+        photo = new Application.Models.Photo(
+          image: files[i]
+          name: files[i].name
+        )
+        
+        setTimeout (->
+          photos_router.photos.add photo
+        ), 1000
+        i++

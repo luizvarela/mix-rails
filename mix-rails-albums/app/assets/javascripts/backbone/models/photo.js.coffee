@@ -11,7 +11,7 @@ class Application.Models.Photo extends Backbone.Model
 
   onAdd: ->
     xhr = new XMLHttpRequest()
-    xhr.open "POST", @url
+    xhr.open "POST", @url()
     datas = new FormData()
     datas.append "image", @get("image")
     xhr.upload.addEventListener "progress", (e) =>
@@ -24,8 +24,10 @@ class Application.Models.Photo extends Backbone.Model
         @set progress: 100
         @trigger "uploadCompleted"
         if xhr.responseText
-          responseObject = JSON.parse(xhr.responseText)
-          @set responseObject
+          @fetch()
+          #responseObject = JSON.parse(xhr.responseText)
+          #console.log responseObject
+          #@set responseObject
         else
           console.log "Não foi possível enviar o arquivo"
 
@@ -36,4 +38,35 @@ class Application.Models.Photo extends Backbone.Model
 class Application.Collections.PhotosCollection extends Backbone.Collection
   model: Application.Models.Photo
   url: '/photos'
+
+  setFromFiles: (files) ->
+    @reset()
+    i = 0
+    while f = files[i]
+      reader = new FileReader()
+      reader.onload = ((theFile, theId) =>
+        (e) ->
+          photo = new Application.Models.Photo()
+          photo.set id: theId
+          photo.set filename: theFile.name
+          photo.set image: e.target.result
+          @add photo
+      )(f)
+      reader.readAsDataURL f, i
+      i++
+
+  addFromFiles: (files) ->
+    i = 0
+    while f = files[i]
+      reader = new FileReader()
+      reader.onload = ((theFile, theId) =>
+        (e) ->
+          photo = new Application.Models.Photo()
+          photo.set id: theId
+          photo.set filename: theFile.name
+          photo.set image: e.target.result
+          @add photo
+      )(f)
+      reader.readAsDataURL f, i
+      i++
 

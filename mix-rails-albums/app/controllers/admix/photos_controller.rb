@@ -1,5 +1,10 @@
-class Admix::PhotosController < Admix::InheritedController
+class Admix::PhotosController < Admix::AdmixController
   
+  respond_to :json
+  respond_to :html, :only => [:upload, :index]
+
+  inherit_resources
+
   before_filter :image_param
 
   polymorphic_belongs_to :album, param: :album_id
@@ -8,7 +13,7 @@ class Admix::PhotosController < Admix::InheritedController
   # load_and_authorize_resource :photo, :through => :album_id
   skip_load_and_authorize_resource
 
-  respond_to :json
+  
 
   def upload
     render inline: params.to_s

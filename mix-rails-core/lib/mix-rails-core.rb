@@ -38,5 +38,7 @@ require 'simple_form'
 
 require 'rails-backbone'
 
+require 'bootstrap-sass'
+
 module MixRailsCore
 end

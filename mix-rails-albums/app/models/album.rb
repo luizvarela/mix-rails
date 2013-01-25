@@ -21,8 +21,7 @@ class Album
 
   embeds_many :photos, cascade_callbacks: true
 
-
-  scope :published, where(published: true)
+  scope :published, where(published: true, :photos.ne => nil, :photos.exists => true)
 
 
 end

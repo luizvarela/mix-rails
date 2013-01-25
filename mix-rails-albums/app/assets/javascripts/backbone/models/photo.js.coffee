@@ -24,10 +24,10 @@ class Application.Models.Photo extends Backbone.Model
         @set progress: 100
         @trigger "uploadCompleted"
         if xhr.responseText
-          @fetch()
-          #responseObject = JSON.parse(xhr.responseText)
-          #console.log responseObject
-          #@set responseObject
+          #@fetch()
+          responseObject = JSON.parse(xhr.responseText)
+          console.log responseObject
+          @set responseObject
         else
           console.log "Não foi possível enviar o arquivo"
 

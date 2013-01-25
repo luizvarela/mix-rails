@@ -7,6 +7,7 @@ class Application.Views.Photos.UploadIndexView extends Backbone.View
 
   initialize: () ->
     @options.photos.bind('reset', @addAll)
+    @options.photos.bind('add', @addOne)
 
   addAll: () =>
     @options.photos.each(@addOne)

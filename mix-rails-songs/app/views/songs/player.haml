@@ -28,7 +28,7 @@
 
       $("#jquery_jplayer_1").bind $.jPlayer.event.pause, (event, par2) ->
 
-  $.getJSON "#{songs_path(:json)}", (songs) =>
+  $.getJSON "#{@songs_api}", (songs) =>
     new jPlayerPlaylist(
       jPlayer: "#jquery_jplayer_1"
       cssSelectorAncestor: "#jp_container_1"

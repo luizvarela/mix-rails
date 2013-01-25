@@ -2,8 +2,6 @@
 #= require jquery_ujs
 #= require underscore
 #= require backbone
-#= require backbone_rails_sync
-#= require backbone_datalink
 #= require jquery/jquery.livequery
 #= require fancybox
 #= require jquery.ui.datepicker
@@ -13,6 +11,9 @@
 #= require ./nicedit_applier
 #= require ../../tipsy/src/javascripts/jquery.tipsy
 #= require ./tipsy_init
+
+
+Backbone.emulateHTTP = true
 
 $ ->
   

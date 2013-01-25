@@ -11,14 +11,17 @@ $ ->
     $(@).change (el) ->
       #photos_router.addFromFiles(el.currentTarget.files)
       files = el.currentTarget.files
+      console.log "Files count: #{files.length}"
       i = 0
       while i < files.length
+        
         photo = new Application.Models.Photo(
           image: files[i]
           name: files[i].name
         )
-        
-        setTimeout (->
-          photos_router.photos.add photo
-        ), 1000
+        ((photo) ->
+          setTimeout ->
+            photos_router.photos.add photo
+          , 1000
+        )(photo)
         i++

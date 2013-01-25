@@ -39,6 +39,7 @@ require 'simple_form'
 require 'rails-backbone'
 
 require 'bootstrap-sass'
+require 'jquery-qtip2-rails'
 
 module MixRailsCore
 end

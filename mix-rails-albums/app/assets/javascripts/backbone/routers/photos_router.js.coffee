@@ -32,6 +32,6 @@ class Application.Routers.PhotosRouter extends Backbone.Router
 
   edit: (id) ->
     photo = @photos.get(id)
-
-    @view = new Application.Views.Photos.EditView(model: photo)
-    $("#upload-container").html(@view.render().el)
+    console.log 'Editando a foto!' + photo
+    #@view = new Application.Views.Photos.EditView(model: photo)
+    #$("#upload-container").html(@view.render().el)

@@ -1,7 +1,7 @@
 class Admix::PhotosController < Admix::AdmixController
   
   respond_to :json
-  respond_to :html, :only => [:upload, :index]
+  respond_to :html, :only => [:upload, :index, :destroy]
 
   inherit_resources
 

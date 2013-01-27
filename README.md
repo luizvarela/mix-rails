@@ -5,7 +5,12 @@
 
 MixRails is a CMS based on Ruby on Rails and uses Mongoid as ORM(MongoDB).
 
-## Installation
+
+## Usage
+
+Create a new rails project.
+
+    $ rails new myproject -T --skip-active-record --skip-bundle --dummy-path=spec/dummy
 
 Add this line to your application's Gemfile:
 
@@ -15,13 +20,8 @@ And then execute:
 
     $ bundle
 
-## Usage
 
-Create a new rails project.
-
-    $ rails new myproject -T --skip-active-record --skip-bundle --dummy-path=spec/dummy
-
-In your config/application.rb add these after rails's requires.
+In your config/application.rb add require 'mix-rails/all'.
 
 ```ruby
 require "action_controller/railtie"

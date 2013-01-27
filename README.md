@@ -79,3 +79,9 @@ Admix::namespace_path = "myadminpath"
 TODO: Add some docs for admix
 
 [![Admix](http://img233.imageshack.us/img233/6731/screenshotfrom201301221.png)]
+
+# Plugins (Extensions)
+
+## Creatig a extensions
+
+    $ rails plugin new mix-rails-pluginame -T --skip-active-record --skip-bundle --dummy-path=spec/dummy --full

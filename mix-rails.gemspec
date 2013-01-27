@@ -9,6 +9,7 @@ MixRails::PROJECTS << "mix-rails-core"
 MixRails::PROJECTS << "mix-rails-auth"
 MixRails::PROJECTS << "admix"
 MixRails::PROJECTS << "mix-rails-settings"
+MixRails::PROJECTS << "mix-rails-wireframe"
 MixRails::PROJECTS << "mix-rails-writer"
 MixRails::PROJECTS << "mix-rails-albums"
 MixRails::PROJECTS << "mix-rails-videos"
@@ -37,6 +38,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency "mix-rails-auth",      version
   gem.add_dependency "admix",               version
   gem.add_dependency "mix-rails-settings",  version
+  gem.add_dependency "mix-rails-wireframe", version
 
   # Content dependencies
   gem.add_dependency "mix-rails-writer",            version

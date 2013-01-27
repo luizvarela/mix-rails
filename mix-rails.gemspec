@@ -10,6 +10,7 @@ MixRails::PROJECTS << "mix-rails-auth"
 MixRails::PROJECTS << "admix"
 MixRails::PROJECTS << "mix-rails-settings"
 MixRails::PROJECTS << "mix-rails-wireframe"
+
 MixRails::PROJECTS << "mix-rails-writer"
 MixRails::PROJECTS << "mix-rails-albums"
 MixRails::PROJECTS << "mix-rails-videos"

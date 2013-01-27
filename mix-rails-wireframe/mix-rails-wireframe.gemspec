@@ -1,12 +1,11 @@
 $:.push File.expand_path("../lib", __FILE__)
 
-# Maintain your gem's version:
-require "mix-rails-wireframe/version"
+version = File.read(File.expand_path("../../MIX_RAILS_VERSION", __FILE__)).strip
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
   s.name        = "mix-rails-wireframe"
-  s.version     = MixRailsWireframe::VERSION
+  s.version     = version
   s.authors     = ["Sadjow Medeiros Leão"]
   s.email       = ["sadjow@gmail.com"]
   s.homepage    = "https://github.com/mixinternet/mix-rails"

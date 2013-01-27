@@ -1,0 +1,14 @@
+!!!
+%html
+  %head
+    %title= render 'title'
+    = stylesheet_link_tag    "mix-rails-wireframe", :media => "all"
+    = javascript_include_tag "mix-rails-wireframe" 
+    = csrf_meta_tags
+  %body
+    .container
+      = frame_for_breadcrumbs
+    .container
+      = yield
+    %footer.container
+      = frame_for_footer

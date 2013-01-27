@@ -17,7 +17,7 @@ Add this line to your application's Gemfile:
     gem 'mix-rails'
 
 And then execute:
-
+    $ cd myproject
     $ bundle
 
 

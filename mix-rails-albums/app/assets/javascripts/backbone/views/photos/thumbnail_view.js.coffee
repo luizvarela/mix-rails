@@ -30,7 +30,8 @@ class Application.Views.Photos.PhotoView extends Backbone.View
   destroy: ->
     if confirm('Tem certeza que deseja deletar?')
       @model.destroy()
-      this.remove()
+      @$el.fadeOut 500, () =>
+        @remove()
       $(".qtip-#{@model.get('id')}").remove()
     false
   edit: () ->
@@ -45,7 +46,7 @@ class Application.Views.Photos.PhotoView extends Backbone.View
 
   save_description: (e) ->
     e.preventDefault()
-    
+    @doHighlighter = true
     new_description = $(@el).find('textarea').val()
     @model.set(description : new_description)
     @tmpDescription = null
@@ -54,5 +55,7 @@ class Application.Views.Photos.PhotoView extends Backbone.View
 
   render: ->
     @$el.html(@template(@model))
-    @$el.highlight('highlight')
+    if @doHighlighter?
+      @$el.find('textarea').effect('highlight', {}, 3000)
+      @doHighlighter = undefined
     return this

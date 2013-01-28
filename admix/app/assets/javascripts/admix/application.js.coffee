@@ -4,7 +4,7 @@
 #= require backbone
 #= require jquery/jquery.livequery
 #= require fancybox
-#= require jquery.ui.datepicker
+#= require jquery.ui.all
 #= require bootstrap
 #= require ./dates
 #= require ../../nicedit/nicEdit

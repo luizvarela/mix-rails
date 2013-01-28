@@ -1,5 +1,6 @@
 # encoding: utf-8
 require 'carrierwave/processing/mini_magick'
+require 'mix-rails-core/gridfs'
 
 class Albums::ImageUploader < CarrierWave::Uploader::Base
 
@@ -45,8 +46,35 @@ class Albums::ImageUploader < CarrierWave::Uploader::Base
   #   process :resize_to_fit => [80, 80]
   # end
 
+  def watermark
+    manipulate! do |img|
+      
+      albums_watermark = Setting.albums_watermark
+      
+      watermark_image = if albums_watermark
+        gridfs_file = MixRailsCore::Gridfs::read_file(albums_watermark.image.url)
+        MiniMagick::Image.read(gridfs_file, "png")
+      else
+        # We can read a file from system too.
+        #MiniMagick::Image.open("#{Rails.root}/app/assets/images/watermarks/watermark.png", "png")
+        false
+      end
+
+      if watermark_image
+        result = img.composite(watermark_image) do |c|
+          c.gravity "SouthEast"
+        end
+        result
+      else
+        img
+      end
+
+    end
+  end
+
   version :medium do
     process :resize_to_fill => [640,420]
+    process :watermark
   end
 
   version :thumb do

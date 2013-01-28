@@ -9,7 +9,7 @@
     -if (@progress != null && @progress < 100)
       %div{class: (@progress < 100) ? 'progress progress-striped active' : 'progress'}
         .bar{style: "width:#{@progress}%;"}
-  %textarea{style: 'width:270px;margin:5px;', placeholder:'Adicione uma descrição para esta foto'}
+  %textarea{style: 'width:270px;margin:5px;', placeholder:'Adicione uma descrição'}
     = @get('description')
   .caption
     %a.file-action.btn.destroy{href: "#", tooltip: 'Excluir'} 

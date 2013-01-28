@@ -13,7 +13,7 @@ class Setting
 
   def self.app_title
     begin
-      Setting.find_by(key: 'app_title').value
+      Setting.find_by(key: 'app_title', activated: true).value
     rescue
       false
     end
@@ -21,7 +21,7 @@ class Setting
 
   def self.app_email
     begin
-      Setting.find_by(key: 'app_email').value
+      Setting.find_by(key: 'app_email', activated: true).value
     rescue
       false
     end
@@ -29,7 +29,7 @@ class Setting
   
   def self.admix_logo
     begin
-      Setting.find_by(key: 'admix_logo')
+      Setting.find_by(key: 'admix_logo', activated: true)
     rescue
       false
     end
@@ -37,7 +37,7 @@ class Setting
 
   def self.link_twitter
     begin
-      Setting.find_by(key: 'link_twitter').value
+      Setting.find_by(key: 'link_twitter', activated: true).value
     rescue
       false
     end
@@ -45,7 +45,23 @@ class Setting
 
   def self.link_facebook
     begin
-      Setting.find_by(key: 'link_facebook').value
+      Setting.find_by(key: 'link_facebook', activated: true).value
+    rescue
+      false
+    end
+  end
+
+  def self.albums_watermark
+    begin
+      Setting.find_by(key: 'albums_watermark', activated: true)
+    rescue
+      false
+    end
+  end
+
+  def self.albums_title
+    begin
+      Setting.find_by(key: 'albums_title', activated: true).value
     rescue
       false
     end

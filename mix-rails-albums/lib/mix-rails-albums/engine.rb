@@ -7,7 +7,7 @@ module MixRailsAlbums
           Admix::Navigation::NavBar.find(:content) do |menu|
             menu.submenu do |submenu|
               submenu.key   = :albums
-              submenu.title = I18n.t 'albums.albums'
+              submenu.title = I18n.t('albums.albums')
               submenu.url   = 'admix_albums_url'
             end
           end

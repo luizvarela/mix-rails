@@ -7,6 +7,4 @@ class MixController < ActionController::Base
 
   helper :all
 
-  before_filter -> { breadcrumbs.add 'Home', index_path } 
-
 end

@@ -1,7 +1,7 @@
 %dl
-  %dt= t('albums.name')
-  %dd= resource.name
-  %dt= t('albums.date')
+  %dt= input_label(:albums, :title)
+  %dd= resource.title
+  %dt= input_label(:albums, :date)
   %dd= resource.date
 
 = render('admix/photos/upload')

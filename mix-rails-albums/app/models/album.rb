@@ -4,24 +4,27 @@ class Album
   include Mongoid::Timestamps
   include Mongoid::Slug
 
-  field :name,          type: String
+  extend Enumerize
+
+  field :title,          type: String
   field :description,   type: String
   field :date,          type: Date
-  field :published,     type: Boolean, default: true
+  field :status,        type: String
+  enumerize :status, in: [:published, :unpublished], default: :published, predicates: true
 
 
-  validates_presence_of :name
+  validates_presence_of :title
   validates_presence_of :date
 
   #slug :name, history: true
 
-  slug :name, history: true do |current_object|
-    current_object.name.parameterize
+  slug :title, history: true do |current_object|
+    current_object.title.parameterize
   end
 
   embeds_many :photos, cascade_callbacks: true
 
-  scope :published, where(published: true, :photos.ne => nil, :photos.exists => true)
+  scope :published, where(status: :published, :photos.ne => nil, :photos.exists => true)
 
 
 end

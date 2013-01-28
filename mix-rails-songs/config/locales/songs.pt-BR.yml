@@ -1,4 +1,9 @@
 pt-BR:
+  simple_form:
+    labels:
+      song:
+        author: 'Artista'
   songs:
     songs: 'Músicas'
     song: 'Música'
+    author: 'Artista'

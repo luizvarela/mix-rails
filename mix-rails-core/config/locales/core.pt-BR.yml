@@ -18,6 +18,7 @@ pt-BR:
   simple_form:
     labels:
       defaults:
+        photos_quantity: 'Fotos (Qtde)'
         status: 'Status'
         author: 'Autor'
         phone: 'Telefone'

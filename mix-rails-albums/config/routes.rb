@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       resources :photos do
         member do
           get :edit_ajax
+          post :update_description
         end
       end
     end

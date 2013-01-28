@@ -13,6 +13,25 @@ class Admix::PhotosController < Admix::AdmixController
   # load_and_authorize_resource :photo, :through => :album_id
   skip_load_and_authorize_resource
 
+
+  def update_description
+
+    @album = Album.find(params[:album_id])
+    @photo = @album.photos.find(params[:id])
+
+    @photo.description = params[:description]
+
+    @photo.save()
+    
+    puts "========================================"
+    puts @photo.to_json
+    puts "========================================"
+
+    render :json => @photo
+
+  end
+
+
   def upload
     render inline: params.to_s
   end

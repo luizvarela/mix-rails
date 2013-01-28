@@ -1,18 +1,21 @@
 .thumbnail
-  .file-title
-    = @title
   %a.link-popover{"data-content" => "<i class=icon-edit></i> Edit"}
     .loading-file
-      - if @image.url
-        %a.photo-link{href: "#"}
-          %img{src: ROOT_PATH + @image.medium.url}
+      - if @get('image').url
+        %a.edit{href: "#"}
+          %img{src: ROOT_PATH + @get('image').medium.url}
       - else
         %img{src: "http://placehold.it/130x90&text=Carregando"}
     -if (@progress != null && @progress < 100)
       %div{class: (@progress < 100) ? 'progress progress-striped active' : 'progress'}
         .bar{style: "width:#{@progress}%;"}
+  %textarea{style: 'width:270px;margin:5px;', placeholder:'Adicione uma descrição para esta foto'}
+    = @get('description')
   .caption
     %a.file-action.btn.destroy{href: "#", tooltip: 'Excluir'} 
       <%= image_tag "admix/icons/delete.png" %>
-    %a.file-action.btn.edit{href: "#", tooltip: 'Editar'} 
+    -#%a.file-action.btn.edit{href: "#", tooltip: 'Editar'} 
       <%= image_tag "admix/icons/picture_edit.png" %>
+    
+    %a.file-action.btn.btn-primary.save{style: 'display:none', href: "#", tooltip: 'Salvar mudanças'} 
+      = 'Salvar mudanças'

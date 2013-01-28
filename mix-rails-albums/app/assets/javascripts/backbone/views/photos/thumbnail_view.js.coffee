@@ -6,11 +6,14 @@ class Application.Views.Photos.PhotoView extends Backbone.View
   events:
     "click .destroy" : "destroy"
     "click .edit": "edit",
+    "keydown textarea": 'update_description'
+    "click .save": 'save_description'
 
   tagName: "li"
   className: 'span4'
 
   initialize: ->
+    @tmpDescription = null
     @model.on "change", @render, this
     @model.on "uploadCompleted", @removeProgressBar, this
     self = @
@@ -33,6 +36,23 @@ class Application.Views.Photos.PhotoView extends Backbone.View
   edit: () ->
     Backbone.history.navigate("#/#{@model.id}/edit")
     false
+  update_description: () ->
+    self = @
+    $(@el).find('textarea').livequery ->
+      new_description = $(this).val()
+      self.tmpDescription = new_description
+      $(self.el).find('.save').show()
+
+  save_description: (e) ->
+    e.preventDefault()
+    
+    new_description = $(@el).find('textarea').val()
+    @model.set(description : new_description)
+    @tmpDescription = null
+    $.post @model.url() + '/update_description', @model.attributes, (data) =>
+      $(@el).find('.save').hide()
+
   render: ->
-    @$el.html(@template(@model.toJSON() ))
+    @$el.html(@template(@model))
+    @$el.highlight('highlight')
     return this

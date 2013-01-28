@@ -3,7 +3,7 @@ class Application.Models.Photo extends Backbone.Model
   idAttribute: '_id'
   defaults:
     image: null
-    description: null
+    description: ''
     progress: 0
   
   initialize: ->

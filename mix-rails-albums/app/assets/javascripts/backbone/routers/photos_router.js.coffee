@@ -1,16 +1,20 @@
 class Application.Routers.PhotosRouter extends Backbone.Router
   initialize: (options) ->
     @photos = new Application.Collections.PhotosCollection()
+    @upload_index()
+
     @photos.url = options.collectionUrl
     @photos.reset options.photos
 
+
   routes:
-    "new"      : "newPhoto"
-    "index"    : "index"
-    "upload_index" : "upload_index"
-    ":id/edit" : "edit"
-    ":id"      : "show"
-    ".*"        : "upload_index"
+    "new"           : "newPhoto"
+    "index"         : "index"
+    "upload_index"  : "upload_index"
+    "photo_edited"  : "photo_edited"
+    ":id/edit"      : "edit"
+    ":id"           : "show"
+    ".*"            : "upload_index"
 
   newPhoto: ->
     @view = new Application.Views.Photos.NewView(collection: @photos)
@@ -32,6 +36,10 @@ class Application.Routers.PhotosRouter extends Backbone.Router
 
   edit: (id) ->
     photo = @photos.get(id)
-    console.log 'Editando a foto!' + photo
+    console.log 'Editando a foto!', id
+    $("#photo-modal-#{id}").modal()
     #@view = new Application.Views.Photos.EditView(model: photo)
     #$("#upload-container").html(@view.render().el)
+    
+  photo_edited: () ->
+

@@ -34,6 +34,8 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
 
+  gem.add_dependency 'rails', '~> 3.2.11'
+
   # Core dependencies
   gem.add_dependency "mix-rails-core",      version
   gem.add_dependency "mix-rails-auth",      version
@@ -49,9 +51,15 @@ Gem::Specification.new do |gem|
   gem.add_dependency "mix-rails-vouchers",          version
   gem.add_dependency "mix-rails-songs",             version
 
-
+  
   gem.add_dependency "fancybox-rails", "~> 0.1.4"
   gem.add_dependency "bootstrap-sass", "~> 2.2.2.0"
   gem.add_dependency "jquery-qtip2-rails", "~> 0.4.0"
+
+  gem.add_dependency "haml-rails"
+
+  # Contact
+  gem.add_dependency 'mail_form',    '~> 1.4.0'
+  gem.add_dependency 'simple_form',  '~> 2.0.0'
 
 end

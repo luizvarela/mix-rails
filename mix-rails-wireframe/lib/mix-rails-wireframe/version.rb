@@ -1,7 +1,7 @@
 module MixRailsWireframe
   module VERSION #:nodoc:
     MAJOR = 0
-    MINOR = 20
+    MINOR = 21
     TINY  = 0
     PRE   = nil
 

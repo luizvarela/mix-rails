@@ -2,8 +2,6 @@ class Photo
   
   include Mongoid::Document
   include Mongoid::Timestamps
-  
-  attr_accessible :description, :image, :image_cache
 
   field :description
   

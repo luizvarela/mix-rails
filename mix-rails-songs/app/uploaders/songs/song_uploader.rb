@@ -22,7 +22,7 @@ class Songs::SongUploader < CarrierWave::Uploader::Base
   end
 
   def cache_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    "system/uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:

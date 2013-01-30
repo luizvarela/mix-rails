@@ -4,7 +4,7 @@ module MixRailsCore
     mattr_accessor :read_file
 
     def self.read_file(filepath)
-      gridfs_path = filepath.gsub("/files/", "")
+      gridfs_path = filepath.gsub("/system/", "")
 
       database_name   = Mongoid::Config.sessions[:default][:database]
       host_and_port   = Mongoid::Config.sessions[:default][:hosts][0].split(':')

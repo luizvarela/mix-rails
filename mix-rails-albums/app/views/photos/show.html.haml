@@ -1,0 +1,3 @@
+- content_for(:photo_content) do
+  = render partial: 'photo_show', locals: {album: @album, photo: @photo}
+= render template: 'templates/photos/show'

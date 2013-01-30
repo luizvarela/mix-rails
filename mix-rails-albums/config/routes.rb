@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   
   localized do
-    resources :albums
+    resources :albums, :only => [:index, :show] do
+      resources :photos, :only => [:index, :show]
+    end
   end
     
   scope Admix::namespace_path, as: :admix, module: :admix do

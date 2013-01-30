@@ -1,0 +1,4 @@
+- content_for(:photos_content) do
+  = render @photos
+  = will_paginate @photos
+= render template: 'templates/photos/index'

@@ -1,11 +1,12 @@
 require 'mongo'
 require 'mix-rails-core/gridfs'
+require 'fileutils'
 
 class GridfsController < ActionController::Metal
   def serve
       
     file_dir =  File.expand_path '../', "#{Rails.root.join('public')}#{env['PATH_INFO']}"
-    Dir.mkdir file_dir unless Dir.exists?(file_dir)
+    FileUtils.mkdir_p file_dir unless Dir.exists?(file_dir)
     gridfs_file = MixRailsCore::Gridfs::read_file(env["PATH_INFO"])
     tmp_file_name = "#{Rails.root.join('public')}#{env['PATH_INFO']}"
     file_content = gridfs_file.read
@@ -16,7 +17,7 @@ class GridfsController < ActionController::Metal
 
     begin
       
-      
+
 
       self.response_body = file_content
 

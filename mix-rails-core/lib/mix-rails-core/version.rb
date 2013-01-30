@@ -1,7 +1,7 @@
 module MixRailsCore
   module VERSION #:nodoc:
     MAJOR = 0
-    MINOR = 16
+    MINOR = 20
     TINY  = 0
     PRE   = nil
 

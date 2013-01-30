@@ -3,7 +3,7 @@
   %head
     %meta{:charset => "utf-8"}
       %meta{:content => "noindex, nofollow", :name => "robots"}
-        %title Admix
+        %title= app_title
         = stylesheet_link_tag    "admix/application", :media => "all"
         = yield :stylesheets
         %script

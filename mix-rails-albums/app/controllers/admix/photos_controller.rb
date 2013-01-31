@@ -9,10 +9,7 @@ class Admix::PhotosController < Admix::AdmixController
 
   polymorphic_belongs_to :album, param: :album_id
 
-  # load_and_authorize_resource :album
-  # load_and_authorize_resource :photo, :through => :album_id
-  skip_load_and_authorize_resource
-
+  # TODO: Maybe we need to skip authorization here. But not authetication.
 
   def update_description
     @album = Album.find(params[:album_id])

@@ -1,9 +1,9 @@
 class User
   include Mongoid::Document
+  rolify
+  include Authority::UserAbilities
 
-  ROLES = %w[admin content_manager]
-
-  #attr_accessible :roles
+  ROLES = %w[admin manager]
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
@@ -46,23 +46,7 @@ class User
 
   ## Token authenticatable
   # field :authentication_token, :type => String
-
-
-  #field :role,    :type => String
-  field :roles_mask, :type => Integer
-
-  def roles=(roles)
-    self.roles_mask = (roles & ROLES).map { |r| 2**ROLES.index(r) }.inject(0, :+)
-  end
-
-  def roles
-    ROLES.reject do |r|
-      ((roles_mask || 0) & 2**ROLES.index(r)).zero?
-    end
-  end
-
-  def is?(role)
-    roles.include?(role.to_s)
-  end
+  
+  #has_and_belongs_to_many :roles
 
 end

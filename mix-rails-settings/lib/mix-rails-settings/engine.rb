@@ -38,7 +38,7 @@ module MixRailsSettings
               
               submenu.instance_eval do
                 def can_render?(current_user)
-                  current_user.is?(:admin)  
+                  current_user.has_role?(:admin)
                 end
               end
               

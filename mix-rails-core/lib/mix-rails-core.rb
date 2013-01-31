@@ -23,8 +23,6 @@ require 'coffee-filter'
 
 # TODO: Create two new to separate the mix-rails-core-core(class api) from the mix-rails-orm(database-access)
 require 'mongoid'
-#mongoid should be requiure before cancan
-require 'cancan'
 require 'mongoid_slug'
 
 #require 'bson_ext'

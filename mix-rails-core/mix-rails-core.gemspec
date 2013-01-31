@@ -27,10 +27,7 @@ Gem::Specification.new do |gem|
 
   gem.add_dependency "rails-i18n"
 
-  gem.add_dependency "mongoid"
-  # mongoid should be loaded before cancan
-  gem.add_dependency "cancan"
-  
+  gem.add_dependency "mongoid"  
   gem.add_dependency "mongoid_slug"
   gem.add_dependency "bson_ext"
   gem.add_dependency "mongo"

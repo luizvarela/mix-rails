@@ -1,0 +1,2 @@
+= f.input :name, as: 'string'
+= f.association :users, as: :check_boxes, collection: User.all, label_method: :email, value_method: :id

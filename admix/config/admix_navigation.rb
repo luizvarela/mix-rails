@@ -12,11 +12,13 @@ dashboard.url   = admix_root_url
 dashboard.icon  = 'icon-flag'
 
 # General
-general = Admix::Navigation::Menu.new
-general.key   = :general
-general.title = t 'general.general'
-general.url   = 'javascript:;'
-general.icon  = 'icon-flag'
+if current_user.has_role? :admin
+  general = Admix::Navigation::Menu.new
+  general.key   = :general
+  general.title = t 'general.general'
+  general.url   = 'javascript:;'
+  general.icon  = 'icon-flag'
+end
 
 # Content
 content = Admix::Navigation::Menu.new

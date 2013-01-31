@@ -1,10 +1,10 @@
 = f.input :email, as: 'string'
 = f.input :password, as: 'password'
-
-- User::ROLES.each do |role|
+= f.input :roles, :as => :select, :collection => Role.all
+-# User::ROLES.each do |role|
   .control-group
     = label_tag "user_roles_#{role}", role.humanize, class: 'control-label'
     .controls
-      = check_box_tag "user[roles][#{role}]", role, @user.roles.include?(role), {:name => "user[roles][]"}
+      = check_box_tag "user[roles][#{role}]", role, @user.has_role?(role), {:name => "user[roles][]"}
 
-= hidden_field_tag "user[roles][]", ""
+-#= hidden_field_tag "user[roles][]", ""

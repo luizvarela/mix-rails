@@ -7,7 +7,7 @@ gemspec
 
 # jquery-rails is used by the dummy application
 gem "mongoid"
-gem "cancan"
+gem "rolify"
 gem "jquery-rails"
 gem "rspec-rails"
 

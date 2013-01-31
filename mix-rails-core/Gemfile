@@ -18,8 +18,7 @@ gem 'rails-i18n'
 
 # TODO: Create two new to separate the mix-rails-core(class api) from the mix-rails-orm(database-access)
 gem 'mongoid'
-# mongoid should be loaded before cancan
-gem "cancan"
+gem 'authority'
 gem 'mongoid_slug'
 gem 'bson_ext'
 gem 'mongo'

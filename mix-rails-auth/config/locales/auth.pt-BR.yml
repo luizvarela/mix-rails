@@ -22,3 +22,5 @@ pt-BR:
     fields:
       last_sign_in_at: 'Último login'
       email: 'E-mail'
+  roles:
+    roles: 'Papéis'

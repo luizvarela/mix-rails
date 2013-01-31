@@ -39,5 +39,7 @@ require 'rails-backbone'
 require 'bootstrap-sass'
 require 'jquery-qtip2-rails'
 
+require 'authority'
+
 module MixRailsCore
 end

@@ -50,6 +50,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'simple_form',  '~> 2.0.0'
 
   gem.add_dependency 'rolify'
+  gem.add_dependency 'authority'
 
   # Core dependencies
   gem.add_dependency "mix-rails-core",      version

@@ -23,16 +23,11 @@ Gem::Specification.new do |s|
   s.add_dependency 'mix-rails-settings', version
 
   s.add_dependency "inherited_resources"
-  s.add_dependency 'will_paginate_mongoid'
   s.add_dependency 'simple_form'
   s.add_dependency 'datagrid'
 
   s.add_dependency 'haml-rails'
   s.add_dependency "jquery-rails"
   s.add_dependency "jquery-ui-rails"
-
-  # TODO Retirar isso aqui, ta quebrando quando tira
-  s.add_dependency 'formtastic'
-  s.add_dependency 'formtastic-bootstrap'
 
 end

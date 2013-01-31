@@ -10,8 +10,6 @@ require 'admix/table-actions'
 require 'simple-navigation'
 require 'simple-navigation-bootstrap'
 require 'inherited_resources'
-require 'formtastic'
-require 'formtastic-bootstrap'
 require 'jquery-rails'
 require 'jquery-ui-rails'
 

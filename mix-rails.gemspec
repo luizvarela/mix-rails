@@ -58,6 +58,9 @@ Gem::Specification.new do |gem|
 
   gem.add_dependency "haml-rails"
 
+  gem.add_dependency "mongoid", "~> 3.0.15"
+  gem.add_dependency "will_paginate_mongoid", '~> 1.1.0'
+
   # Contact
   gem.add_dependency 'mail_form',    '~> 1.4.0'
   gem.add_dependency 'simple_form',  '~> 2.0.0'

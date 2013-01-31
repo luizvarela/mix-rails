@@ -51,23 +51,21 @@
       - if alert
         %p.alert.alert-warn= alert
       = yield
-
-      -#
-        .row-fluid
-          .span2
-            %ul.nav.nav-pills.nav-stacked
-              %li.active
-                %a{href: ''} List
-              %li
-                %a{href: ''} New
-              %li
-                %a{href: ''} Remove
-          .span10
-            - if notice
-              %p.alert.alert-success= notice
-            - if alert
-              %p.alert.alert-warn= alert
-            = yield
+      -#.row-fluid
+        .span2
+          %ul.nav.nav-pills.nav-stacked
+            %li.active
+              = link_to t("#{@collection_name}.#{@collection_name}"), polymorphic_path([:admix, resource])
+            %li
+              = link_to "Novo " + t("#{@collection_name}.#{@collection_name}"), new_polymorphic_path([:admix, resource])
+            %li
+              = link_to t("Editar #{@collection_name}.#{@collection_name}"), polymorphic_path([:admix, resource])
+        .span10
+          - if notice
+            %p.alert.alert-success= notice
+          - if alert
+            %p.alert.alert-warn= alert
+          = yield
 
 
     .container-fluid

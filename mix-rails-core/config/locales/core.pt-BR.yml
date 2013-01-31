@@ -1,6 +1,8 @@
 pt-BR:
   enumerize:
     status:
+      activeted: 'Ativado'
+      disactiveted: 'Desativado'
       published: 'Publicado'
       unpublished: 'Não publicado'
     published:
@@ -18,6 +20,16 @@ pt-BR:
   simple_form:
     labels:
       defaults:
+        published_at: 'Data de publicação'
+        published_until: 'Publicação até'
+        payment_forms_ids: 'Formas de pagamento'
+        payment_forms: 'Formas de pagamento'
+        featured: 'Destaque'
+        price: 'Preço'
+        down_payment: 'Valor de entrada'
+        quantity_of_installments: 'Quantidade de parcelas'
+        installment_amount: 'Preço da parcela'
+        description: 'Descrição'
         photos_quantity: 'Fotos (Qtde)'
         status: 'Status'
         author: 'Autor'

@@ -1,5 +1,4 @@
-- pluralized_resource = resource_class.to_s.downcase.pluralize
-%h1= t('admix.crud.listing', resources: t("#{pluralized_resource}.#{pluralized_resource}"))
+%h1= t('admix.crud.listing', resources: t("#{@collection_name}.#{@collection_name}"))
 
 = datagrid_table @report, @assets, html: {class: 'table table-striped'}
 = will_paginate @assets

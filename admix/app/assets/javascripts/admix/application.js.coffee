@@ -6,17 +6,21 @@
 #= require fancybox
 #= require jquery.ui.all
 #= require bootstrap
-#= require ./dates
 #= require ../../nicedit/nicEdit
 #= require ./nicedit_applier
 #= require ../../tipsy/src/javascripts/jquery.tipsy
 # ./tipsy_init
 #= require jquery.qtip.js
+#= require jquery.globalmoney
+
 
 
 Backbone.emulateHTTP = true
 
 $ ->
+
+  window.cfgCulture = 'pt-BR'
+  $.preferCulture(cfgCulture)
 
   $(".actions [title]").livequery ->
     $(this).qtip
@@ -27,3 +31,17 @@ $ ->
   
   $('.fancybox').livequery ->
     $(@).fancybox();
+
+  $('.currency').livequery ->
+    $(@).maskMoney
+      symbol: 'R$'
+      decimal: ','
+      precision: 2
+      thousands: '.'
+      showSymbol: true
+
+  $("input.datepicker").each (i) ->
+    $(this).datepicker
+      altFormat: "yy-mm-dd"
+      dateFormat: "dd/mm/yy"
+      altField: $(this).next()

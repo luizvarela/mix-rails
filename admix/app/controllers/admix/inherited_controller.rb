@@ -10,7 +10,7 @@ module Admix
     before_filter :generate_datagrid , only: [:index ]
 
     
-    # Add a breadcrumb, in this case nested resources. ;) by: sadjow@gmail.com
+    # Add a breadcrumb, in this case nested resources. ;)
     before_filter -> {
       if defined?(parent_type)
         breadcrumbs.add t("#{parent_type.to_s.gsub('_', '').pluralize}.#{parent_type.to_s.gsub('_', '').pluralize}") , polymorphic_path([:admix,parent_class])
@@ -43,7 +43,7 @@ module Admix
     end
 
     def collection_name
-      resource_class.to_s.downcase.pluralize
+      @collection_name = resource_class.to_s.underscore.pluralize.gsub("::", "_")
     end
 
     def resource_name

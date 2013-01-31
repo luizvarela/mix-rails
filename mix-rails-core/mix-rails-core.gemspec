@@ -45,7 +45,6 @@ Gem::Specification.new do |gem|
   gem.add_dependency "simple-navigation"
   gem.add_dependency "simple-navigation-bootstrap"
   gem.add_dependency "datagrid", "~> 0.7.0"
-  gem.add_dependency "will_paginate_mongoid"
 
   gem.add_dependency "jquery-rails"
   gem.add_dependency "jquery-ui-rails"

@@ -31,7 +31,6 @@ gem 'breadcrumbs'
 gem 'simple-navigation'
 gem 'simple-navigation-bootstrap'
 gem 'datagrid'
-gem 'will_paginate_mongoid'
 gem 'coffee-script'
 #gem 'sass-rails'
 

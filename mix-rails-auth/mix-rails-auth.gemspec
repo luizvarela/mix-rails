@@ -20,9 +20,6 @@ Gem::Specification.new do |s|
   #
   s.add_dependency "devise", "~> 2.1.2"
   s.add_dependency "devise-i18n"
-  s.add_dependency "mongoid", "~> 3.0.15"
-  s.add_dependency "cancan"
-  s.add_dependency 'will_paginate_mongoid'
 
   #s.add_dependency 'mix-rails-core', version 
 
